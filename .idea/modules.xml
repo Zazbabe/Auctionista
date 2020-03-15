@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Auctionista.iml" filepath="$PROJECT_DIR$/.idea/Auctionista.iml" />
-      <module fileurl="file://$PROJECT_DIR$/auctionista/auctionista.iml" filepath="$PROJECT_DIR$/auctionista/auctionista.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Auctionista.iml" filepath="$PROJECT_DIR$/Auctionista.iml" />
     </modules>
   </component>
 </project>
