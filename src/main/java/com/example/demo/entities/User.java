@@ -69,11 +69,19 @@ public class User {
         this.email = email;
     }
 
+<<<<<<< HEAD
     public String getAdress() {
         return address;
     }
 
     public void setAdress(String adress) {
+=======
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String adress) {
+>>>>>>> Mapping_etc
         this.address = adress;
     }
 
