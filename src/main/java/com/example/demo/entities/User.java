@@ -14,7 +14,7 @@ public class User {
     private String first_name;
     private String last_name;
     private String email;
-    private String adress;
+    private String address;
     private String phone;
 
 
@@ -69,12 +69,12 @@ public class User {
         this.email = email;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String adress) {
+        this.address = adress;
     }
 
     public String getPhone() {
