@@ -14,7 +14,7 @@ public class User {
     private String first_name;
     private String last_name;
     private String email;
-    private String adress;
+    private String address;
     private String phone;
 
 
@@ -70,11 +70,11 @@ public class User {
     }
 
     public String getAdress() {
-        return adress;
+        return address;
     }
 
     public void setAdress(String adress) {
-        this.adress = adress;
+        this.address = adress;
     }
 
     public String getPhone() {
