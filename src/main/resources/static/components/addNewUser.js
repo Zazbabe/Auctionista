@@ -29,7 +29,7 @@ export default {
                 body: JSON.stringify(user)
             })
 
-            return = await result.json()
+            result = await result.json()
         }
 
     }
