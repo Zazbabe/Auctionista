@@ -37,7 +37,7 @@ class MyWebMvcConfigurer implements WebMvcConfigurer {
     public DataSource dataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("org.sqlite.JDBC");
-        dataSourceBuilder.url("jdbc:auctionista.db");
+        dataSourceBuilder.url("jdbc:sqlite:auctionista.db");
         return dataSourceBuilder.build();
     }
 }
