@@ -1,7 +1,7 @@
 export default {
     template: `
         <form @submit.prevent = "registerNewUser">
-            <input type = "text"
+            <input v-model = "userName" type = "text"
             placeholder = "Enter username">
             <button>Register<button>
         
@@ -28,10 +28,10 @@ export default {
                 },
                 body: JSON.stringify(user)
             })
-
             result = await result.json()
+            this.$store.commit('appendUser', result)
+
+            this.userName = ''
         }
-
     }
-
 }

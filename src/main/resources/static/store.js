@@ -10,6 +10,10 @@ export const store = new Vuex.Store({
     mutations: {
         setUsers(state, users) {
             state.users = users
+        },
+        
+        appendUser (state, user) {
+            state.pets.push(user)
         }
 
     },
