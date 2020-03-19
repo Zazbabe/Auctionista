@@ -71,3 +71,17 @@ async function createNewAuction(auction) {
     })
     auctionFromServer = await auctionFromServer.json()
 }
+
+// FUNCTIONS
+    async function login(username, password) {
+        let users = $this.store.state.users
+        for (let index = 0; index < users.length; index++) {
+            if(users[index].username == username &&
+                users[index].password == password) {
+                    return users[index]
+                }
+                else {
+                    console.log("Wrong username or password")
+                }
+        }
+    }

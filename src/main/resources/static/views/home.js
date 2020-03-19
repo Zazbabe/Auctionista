@@ -1,19 +1,20 @@
 import getUsersButton from '../components/getUsersButton.js'
 import userList from '../components/userList.js'
-import addNewUser from '../components/addNewUser.js'
+// import addNewUser from '../components/addNewUser.js'
+import listAllAuctions from '../components/auctionSummaryList.js'
 
 export default {
     components: {
-        getUsersButton,
-        userList,
-        addNewUser
+        //getUsersButton,
+       // userList,
+        //addNewUser,
+        listAllAuctions
     },
+    
     template: `
         <div>
             <h2> Home </h2>
-            <getUsersButton />
-            <userList />
-            <addNewUser />
+            <listAllAuctions />
 
         </div>
     `

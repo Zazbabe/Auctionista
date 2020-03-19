@@ -1,3 +1,5 @@
+import { createNamespacedHelpers } from "./libs/vuex.esm.browser"
+
 export default {
     template: `
       <div id="app">
@@ -10,5 +12,6 @@ export default {
           <router-view />
         </main>
       </div>
-    `
-  }
+    `,
+
+}

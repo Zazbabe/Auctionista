@@ -1,5 +1,5 @@
 import Vue from './libs/vue.esm.browser.js'
-import VueRouter from './libs/vue-router.esm.browser'
+import VueRouter from './libs/vue-router.esm.browser.js'
 Vue.use(VueRouter)
 
 import home from './views/home.js'

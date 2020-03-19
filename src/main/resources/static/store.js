@@ -1,5 +1,5 @@
 import Vue from './libs/vue.esm.browser.js'
-import Vuex from './libs/vuex.esm.browser'
+import Vuex from './libs/vuex.esm.browser.js'
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
@@ -17,6 +17,7 @@ export const store = new Vuex.Store({
         appendUser(state, user) {
             state.pets.push(user)
         },
+        
     // AUCTIONS
         setAuctions(state, auctions) {
             state.actions = auctions
