@@ -2,54 +2,111 @@ auktionista.db
 
 scr/
 	main/
-		resources/
-			application.properties
-			static/
-				index.html
-				app.js
-				main.js
-				store.js
-				router.js
-				style.css
-				views/
-					home.js
-					about.js
-				components/
-					GetUsersButton.js
-					userList.js
-					addNewUser.js
-					suctionSummary.js
-					auctionSummaryList.js
+		java/
+			com/
+				example/
+					demo/
+						resources/
+							application.properties
+
+							static/
+								index.html
+
+								app.js
+
+								main.js
+									async function getAllUsers()
+									async function getAllUsersgetUserById(id)
+									async function createNewUser(user)
+									async function getAllAuctions()
+									async function getAuctionById(id)
+									async function createNewAuction(auction)
+									async function login(username, password)
+									const user
+
+								store.js
+									export const store
+
+								router.js
+									export const router
+
+								style.css
+
+								views/
+									home.js
+
+									about.js
+
+								components/
+									GetUsersButton.js
+
+									userList.js
+
+									addNewUser.js
+										async registerNewUser
+
+									auctionSummary.js
+
+									auctionSummaryList.js
+										async start
+
 				libs/
 					vue-router.esm.browser.js
+
 					vue.esm.browser.js
+
 					vuex.esm.browser.js
+
 		java/
 			com/
 				example/
 					AuctionistaApplication.java
+
 					configs/
 						MyWebMvcConfigurer.java
+
 						SQLiteDialect.java
+
 						SQLiteIdentityColumnSupport.java
+
 						demo/
 							AuctionistaApplicationTests.java
+
 							repositories/
 								AuctionRepo.java
+
 								BidRepo.java
+
 								UserRepo.java
+
 							entities/
 								Auction.java
+									public String getStart_time
+									public void setStart_time(String start_time)
+									public String getEnd_time
+									public void setEnd_time(String end_time)
+									public int getId
+
 								Bid.java
+
 								User.java
+
 							controllers/
 								AuctionController.java
+									public List<Auction> getAllAuctions
+
 								BidController.java
+
 								UserController.java
+
 							service/
 								AuctionService.java
+									public List<Auction> findAllAuctions
+
 								BidService.java
+
 								UserService.java
+
 	test/
 		java/
 			com/
