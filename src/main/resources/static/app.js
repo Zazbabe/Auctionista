@@ -3,7 +3,7 @@
 export default {
     template: `
       <div id="app">
-        <nav>
+        <nav class="navbar-top">
           <router-link to="/">Home</router-link>
           <router-link to="/about">About</router-link>
         </nav>

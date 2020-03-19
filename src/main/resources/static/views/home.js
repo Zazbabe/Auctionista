@@ -12,7 +12,7 @@ export default {
     },
     
     template: `
-        <div>
+        <div class="main-listing">
             <h2> Home </h2>
             <listAllAuctions />
 

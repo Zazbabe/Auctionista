@@ -1,7 +1,29 @@
 * {
     box-sizing: border-box;
 }
+main {
+    display: flex;
+}
 
 body{
+    display: flex;
     margin: 0;
+    background-color: aqua;
+}
+.navbar-top {
+    background-color: bisque;
+    width: 100%;
+    padding: 20px;
+    position: fixed;
+}
+.navbar-top a {
+    text-decoration: none;
+    color: black;
+}
+
+
+auction-card .auction-card-photo {
+    size: 600px 600px;
+    background-size: cover;
+
 }

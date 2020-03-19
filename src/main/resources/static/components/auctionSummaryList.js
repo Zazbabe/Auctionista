@@ -4,9 +4,10 @@ export default {
         <li v-for="auction of auctions"
         :key="auction.id"
         class="auction-card"> 
-            title: {{ auction.title }} <br>
-            ending: {{ auction.end_time }} <br>
-            seller: {{ auction.seller }} 
+            <div class="auction-card-photo" style="background-image: url('https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?cs=srgb&dl=shallow-focus-photography-of-blue-alpine-car-1592384.jpg&fm=jpg');"> </div>  
+                title: {{ auction.title }} <br>
+                ending: {{ auction.end_time }} <br>
+                seller: {{ auction.seller }} 
         </li>
      </ul>
     `,
