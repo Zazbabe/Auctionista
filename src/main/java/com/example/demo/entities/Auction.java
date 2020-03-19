@@ -14,11 +14,27 @@ public class Auction {
     private String title;
     private String description;
     private double reserve_price;
-    private Date start_time;
-    private Date end_time;
+    private String start_time;
+    private String end_time;
     private int main_image;
 
     public Auction() {
+    }
+
+    public String getStart_time() {
+        return start_time;
+    }
+
+    public void setStart_time(String start_time) {
+        this.start_time = start_time;
+    }
+
+    public String getEnd_time() {
+        return end_time;
+    }
+
+    public void setEnd_time(String end_time) {
+        this.end_time = end_time;
     }
 
     public int getId() {
@@ -59,22 +75,6 @@ public class Auction {
 
     public void setReserve_price(double reserve_price) {
         this.reserve_price = reserve_price;
-    }
-
-    public Date getStart_time() {
-        return start_time;
-    }
-
-    public void setStart_time(Date start_time) {
-        this.start_time = start_time;
-    }
-
-    public Date getEnd_time() {
-        return end_time;
-    }
-
-    public void setEnd_time(Date end_time) {
-        this.end_time = end_time;
     }
 
     public int getMain_image() {
