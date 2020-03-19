@@ -14,7 +14,7 @@ public class AuctionController {
     @Autowired
     AuctionService auctionService;
 
-    @GetMapping("/auctions/")
+    @GetMapping("/auctions")
     public List<Auction> getAllAuctions(){
         return auctionService.findAllAuctions();
 
