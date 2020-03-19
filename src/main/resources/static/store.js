@@ -1,5 +1,5 @@
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
-import Vuex from 'https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.esm.browser.js'
+import Vue from './libs/vue.esm.browser.js'
+import Vuex from './libs/vuex.esm.browser'
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
@@ -9,12 +9,20 @@ export const store = new Vuex.Store({
 
     },
     mutations: {
+    // USERS 
         setUsers(state, users) {
             state.users = users
         },
         
-        appendUser (state, user) {
+        appendUser(state, user) {
             state.pets.push(user)
+        },
+    // AUCTIONS
+        setAuctions(state, auctions) {
+            state.actions = auctions
+        },
+        appendAuction (state, auction) {
+            state.auction.push(auction)
         }
 
     },
