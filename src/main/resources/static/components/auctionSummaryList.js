@@ -1,29 +1,31 @@
 export default {
-
     template: `
     <ul> 
         <li v-for="auction of auctions"
-        :key="auction.id"> 
-            <div style = "background-image": url( {{ auction.main_image }})> </div> 
+        :key="auction.id"
+        class="auction-card"> 
             title: {{ auction.title }} <br>
             ending: {{ auction.end_time }} <br>
             seller: {{ auction.seller }} 
-            <hr>
         </li>
      </ul>
     `,
+   /* async created() {
+        {
+            let auctions = await fetch('/rest/auctions')
+            auctions = await auctions.json()
+            console.log(auctions)
+
+            this.$store.commit('setAuctions', auctions)
+        }
+    },
+*/
     computed: {
         auctions() {
             return this.$store.state.auctions
         }
     },
-    methods: {
-        async start() {
-            let auctions = await fetch('/rest/auctions')
-            auctions = await auctions.json()
-            console.log(auctions)
-        }
-    }
+    methods: {}
 }
 
 

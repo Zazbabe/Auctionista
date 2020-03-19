@@ -1,4 +1,4 @@
-import { createNamespacedHelpers } from "./libs/vuex.esm.browser"
+//import { createNamespacedHelpers } from "./libs/vuex.esm.browser"
 
 export default {
     template: `
@@ -13,5 +13,15 @@ export default {
         </main>
       </div>
     `,
+    async created() {
+
+      let auctions = await fetch('/rest/auctions')
+      auctions = await auctions.json()
+      console.log(auctions)
+
+      this.$store.commit('setAuctions', auctions)
+
+
+    }
 
 }

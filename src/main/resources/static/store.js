@@ -5,7 +5,7 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
         users:[],
-        actions:[]
+        auctions:[]
 
     },
     mutations: {
@@ -15,15 +15,15 @@ export const store = new Vuex.Store({
         },
         
         appendUser(state, user) {
-            state.pets.push(user)
+            state.users.push(user)
         },
         
     // AUCTIONS
         setAuctions(state, auctions) {
-            state.actions = auctions
+            state.auctions = auctions
         },
         appendAuction (state, auction) {
-            state.auction.push(auction)
+            state.auctions.push(auction)
         }
 
     },
