@@ -1,4 +1,4 @@
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
+import Vue from './libs/vue.esm.browser.js'
 import {
     store
 } from './store.js'
@@ -13,22 +13,18 @@ new Vue({
     render: h => h(app)
 }).$mount('#app');
 
-
+// USERS
 async function getAllUsers() {
     let users = await fetch('/rest/users')
     users = await users.json()
     console.log(users)
 }
 
-getAllUsers()
-
 async function getUserById(id) {
     let user = await fetch('/rest/users' + id)
     user = await user.json()
     console.log(user)
 }
-
-getUserById(1)
 
 async function createNewUser(user) {
     let userFromServer = await fetch('/rest/users', {
@@ -39,8 +35,8 @@ async function createNewUser(user) {
         body: JSON.stringify(user)
     })
     userFromServer = await userFromServer.json()
-
 }
+
 // usern under är bara test för createUser
 const user = {
     username: '',
@@ -50,4 +46,28 @@ const user = {
     email: '',
     address: '',
     phone: ''
+}
+
+// AUCTIONS
+async function getAllAuctions() {
+    let auctions = await fetch('/rest/auctions')
+    auctions = await auctions.json()
+    console.log(auctions)
+}
+
+async function getAuctionById(id) {
+    let auction = await fetch('/rest/auctions' + id)
+    auction = await auction.json()
+    console.log(auction)
+}
+
+async function createNewAuction(auction) {
+    let auctionFromServer = await fetch('/rest/auctions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(auction)
+    })
+    auctionFromServer = await auctionFromServer.json()
 }
