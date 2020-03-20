@@ -1,9 +1,10 @@
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
-import VueRouter from 'https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.esm.browser.js'
+import Vue from './libs/vue.esm.browser.js'
+import VueRouter from './libs/vue-router.esm.browser.js'
 Vue.use(VueRouter)
 
 import home from './views/home.js'
 import about from './views/about.js'
+import auctionDetails from './views/auctionDetails.js'
 
 export const router = new VueRouter({
   mode: 'history',
@@ -17,6 +18,11 @@ export const router = new VueRouter({
       name: "about",
       path: '/about', 
       component: about
+    },
+    {
+      name: "auctionDetails",
+      path: '/auctions/:id',
+      component: auctionDetails
     }
   ]
 });

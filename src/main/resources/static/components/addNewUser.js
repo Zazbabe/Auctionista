@@ -1,7 +1,7 @@
 export default {
     template: `
         <form @submit.prevent = "registerNewUser">
-            <input v-model = "userName" type = "text"
+            <input v-model = "username" type = "text"
             placeholder = "Enter username">
             <button>Register<button>
         
@@ -9,17 +9,17 @@ export default {
     `,
     data() {
         return {
-            userName: '',
-            firstName: '',
-            lastName: ''
+            username: '',
+            firstname: '',
+            lastname: ''
         }
     },
     methods: {
         async registerNewUser() {
             let user = {
-                username = this.userName,
-                first_name = this.firstName,
-                last_name = this.lastName
+                username = this.username,
+                first_name = this.firstname,
+                last_name = this.lastname
             }
             let result = await fetch('/rest/users', {
                 method: 'POST',
