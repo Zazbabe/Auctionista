@@ -1,14 +1,13 @@
 export default {
     template: `
-    <div>
+    <div class="auction-details">
+        <div class="a-pictures">här är en bild: {{auction.main_image}}</div>
         <h2>{{auction.title}}</h2>
-        <p>Image: {{auction.main_image}}</p>
-        <p>Seller: {{auction.seller}}</p>
-        <p>Start time: {{auction.start_time}}</p>
-        <p>End time: {{auction.end_time}}</p>
-        <p>Description: {{auction.description}}</p>
+        <p>Säljare: {{auction.seller}}</p>
+        <p>Startade: {{auction.start_time}}</p>
+        <p>Slutar: {{auction.end_time}}</p>
+        <p class="a-description">Beskrivnig: {{auction.description}}</p>
     </div>
-
     `,
     data() {
         return {
