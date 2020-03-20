@@ -4,6 +4,7 @@ Vue.use(VueRouter)
 
 import home from './views/home.js'
 import about from './views/about.js'
+import auctionDetails from './views/auctionDetails.js'
 
 export const router = new VueRouter({
   mode: 'history',
@@ -17,6 +18,11 @@ export const router = new VueRouter({
       name: "about",
       path: '/about', 
       component: about
+    },
+    {
+      name: "auctionDetails",
+      path: '/auctions/:id',
+      component: auctionDetails
     }
   ]
 });

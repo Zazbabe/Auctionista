@@ -17,7 +17,6 @@ public class AuctionController {
     @GetMapping("/auctions")
     public List<Auction> getAllAuctions(){
         return auctionService.findAllAuctions();
-
     }
 
 

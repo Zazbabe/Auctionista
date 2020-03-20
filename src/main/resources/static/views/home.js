@@ -13,9 +13,17 @@ export default {
     
     template: `
         <div class="main-listing">
-            <h2> Home </h2>
             <listAllAuctions />
 
         </div>
-    `
+    `,
+
+    async created() {
+
+        let auctions = await fetch('/rest/auctions')
+        auctions = await auctions.json()
+        console.log(auctions)
+  
+        this.$store.commit('setAuctions', auctions)
+      }
 }
