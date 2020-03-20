@@ -3,6 +3,7 @@ export default {
     <ul> 
         <li v-for="auction of auctions"
         :key="auction.id"
+        @click="showAuctionDetails(auction.id)"
         class="auction-card"> 
             <div class="auction-card-photo" style="background-image: url('https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?cs=srgb&dl=shallow-focus-photography-of-blue-alpine-car-1592384.jpg&fm=jpg');"> </div>  
                 Title: {{ auction.title }} <br>
@@ -26,7 +27,11 @@ export default {
             return this.$store.state.auctions
         }
     },
-    methods: {}
+    methods: {
+        showAuctionDetails(id) {
+            this.$router.push('/auctions/' + id)
+        }
+    }
 }
 
 

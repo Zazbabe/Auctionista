@@ -53,6 +53,11 @@ ul {
     border-radius: 10px;
     flex-basis: 30%;
     justify-content: center;
+    cursor: pointer;
+}
+
+.auction-card:hover {
+    border: 1px solid gray;
 }
 
 .auction-card-photo {

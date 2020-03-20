@@ -1,7 +1,12 @@
 export default {
     template: `
     <div>
-        <h2> Auction id</h2>
+        <h2>{{auction.title}}</h2>
+        <p>Image: {{auction.main_image}}</p>
+        <p>Seller: {{auction.seller}}</p>
+        <p>Start time: {{auction.start_time}}</p>
+        <p>End time: {{auction.end_time}}</p>
+        <p>Description: {{auction.description}}</p>
     </div>
 
     `,
@@ -9,6 +14,10 @@ export default {
         return {
             auction: {
                 title: '',
+                seller: '',
+                start_time: '',
+                end_time: '',
+                description: '',
                 bids: []
             }
         }
