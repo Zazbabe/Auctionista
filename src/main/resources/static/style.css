@@ -50,9 +50,10 @@ ul {
     background-color: rgb(245, 244, 244);
     padding: 7px;
     margin: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     flex-basis: 30%;
     justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .auction-card-photo {
