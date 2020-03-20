@@ -81,11 +81,22 @@ scr/
 
 							entities/
 								Auction.java
-									public String getStart_time
+									public String getStart_time()
 									public void setStart_time(String start_time)
-									public String getEnd_time
+									public String getEnd_time()
 									public void setEnd_time(String end_time)
-									public int getId
+									public int getId()
+									public void setId(int id)
+									public int getSeller()
+									public void setSeller(int seller)
+									public String getTitle()
+									public void setTitle(String title)
+									public String getDescription()
+									public void setDescription(String description)
+									public double getReserve_price()
+									public void setReserve_price(double reserve_price)
+									public int getMain_image()
+									public void setMain_image(int main_image)
 
 								Bid.java
 
