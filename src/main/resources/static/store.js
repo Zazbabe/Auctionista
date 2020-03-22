@@ -4,8 +4,9 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
+       
         users:[],
-        auctions:[]
+        auctions:[],
 
     },
     mutations: {

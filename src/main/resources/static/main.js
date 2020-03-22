@@ -57,6 +57,12 @@ async function getAuctionById(id) {
     console.log(auction)
 }
 
+async function getAuctionByTitle(title) {
+    let auction = await fetch('/rest/auctions' + title)
+    auction = await auction.json()
+    console.log(auction)
+}
+
 async function createNewAuction(auction) {
     let auctionFromServer = await fetch('/rest/auctions', {
         method: 'POST',
