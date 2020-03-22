@@ -24,10 +24,7 @@ public class AuctionController {
         return auctionService.findAuction(id);
     }
 
-    @GetMapping("/auctions/{title}")
-    public Auction getAuctionTitle(@PathVariable String title) {
-        return auctionService.findAuctionTitle(title);
-    }
+
 }
 
 

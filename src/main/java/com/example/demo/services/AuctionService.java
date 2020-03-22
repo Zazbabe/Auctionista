@@ -15,17 +15,11 @@ public class AuctionService {
         return (List<Auction>) auctionRepo.findAll();
     }
 
-    public Auction findAuction (int id){
-        Auction auction = auctionRepo.findById(id);
-        if (auction == null) return null;
-
-        return auction;
-    }
-
-    public Auction findAuctionTitle (String title){
-        Auction auction = auctionRepo.findByTitle(title);
-        if (auction == null) return null;
+    public Auction findAuction(int id) {
+        Auction auction=auctionRepo.findById(id);
+        if ( auction == null ) return null;
 
         return auction;
     }
 }
+
