@@ -23,6 +23,11 @@ public class AuctionController {
     public Auction getAuction(@PathVariable int id) {
         return auctionService.findAuction(id);
     }
+
+    @GetMapping("/auctions/{title}")
+    public Auction getAuctionTitle(@PathVariable String title) {
+        return auctionService.findAuctionTitle(title);
+    }
 }
 
 
