@@ -22,4 +22,10 @@ public class AuctionService {
         return auction;
     }
 
+    public Auction findAuctionTitle (String title){
+        Auction auction = auctionRepo.findByTitle(title);
+        if (auction == null) return null;
+
+        return auction;
+    }
 }
