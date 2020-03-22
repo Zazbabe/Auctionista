@@ -1,5 +1,16 @@
 export default {
-    template: `
+
+    data(){
+     return {
+         search:"",
+     }
+
+    },
+   
+   template: ` <div class="search-wrapper">
+    <input type="text" v-model="search" placeholder="Search title.."/>
+        <label>Search title:</label>
+        
     <ul> 
         <li v-for="auction of auctions"
         :key="auction.id"
@@ -24,8 +35,12 @@ export default {
 */
     computed: {
         auctions() {
-            return this.$store.state.auctions
+            return this.$store.state.auctions.filter((auction) => {
+                return auction.title.toLowerCase().match(this.search.toLowerCase());
+            })
         }
+
+        
     },
     methods: {
         showAuctionDetails(id) {
