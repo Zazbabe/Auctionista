@@ -8,7 +8,9 @@ export default {
           <router-link to="/">Home</router-link>
           <router-link to="/register">Register</router-link>
         </nav>
-        <div class="top-picture">hej hej</div>
+        <div class="top-picture">
+          <div class="top-picture-text">AUCTIONISTA</div>
+        </div>
   
         <main>
           <router-view />
