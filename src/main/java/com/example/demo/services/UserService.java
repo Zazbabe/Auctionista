@@ -15,7 +15,6 @@ public class UserService {
 
     public List<User> findAllUser(){
         return (List<User>) userRepo.findAll();
-
     }
 
     public Optional<User> findUserById(int id) {
