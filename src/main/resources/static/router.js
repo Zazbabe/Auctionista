@@ -3,7 +3,7 @@ import VueRouter from './libs/vue-router.esm.browser.js'
 Vue.use(VueRouter)
 
 import home from './views/home.js'
-import about from './views/about.js'
+import register from './views/register.js'
 import auctionDetails from './views/auctionDetails.js'
 
 export const router = new VueRouter({
@@ -15,9 +15,9 @@ export const router = new VueRouter({
       component: home
     },
     {
-      name: "about",
-      path: '/about', 
-      component: about
+      name: "register",
+      path: '/register', 
+      component: register
     },
     {
       name: "auctionDetails",

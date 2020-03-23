@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/rest")
@@ -19,5 +19,13 @@ public class AuctionController {
         return auctionService.findAllAuctions();
     }
 
+    @GetMapping("/auctions/{id}")
+    public Auction getAuction(@PathVariable int id) {
+        return auctionService.findAuction(id);
+    }
+
 
 }
+
+
+
