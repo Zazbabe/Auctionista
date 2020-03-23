@@ -6,7 +6,7 @@ export default {
     },
     template: `
         <div>
-            <h2> Abooot </h2>
+            <h2> Register User </h2>
             <newUser> </newUser>
         </div>
     `

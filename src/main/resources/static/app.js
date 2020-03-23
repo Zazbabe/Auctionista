@@ -6,7 +6,7 @@ export default {
         <nav class="navbar-top">
         
           <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
+          <router-link to="/register">Register</router-link>
         </nav>
         <div class="top-picture">hej hej</div>
   
