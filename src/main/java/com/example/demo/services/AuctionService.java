@@ -14,4 +14,12 @@ public class AuctionService {
     public List<Auction> findAllAuctions() {
         return (List<Auction>) auctionRepo.findAll();
     }
+
+    public Auction findAuction(int id) {
+        Auction auction=auctionRepo.findById(id);
+        if ( auction == null ) return null;
+
+        return auction;
+    }
 }
+
