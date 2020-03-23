@@ -5,7 +5,7 @@ export default {
         <input v-model = "userName" type = "text"
         placeholder = "Enter username">
         <input v-model = "passWord" type = "password"
-        @keyup.enter.prevent placeholder = "Enter password">
+        placeholder = "Enter password">
         <button>Login</button>
     </form>
 `,
@@ -30,13 +30,15 @@ export default {
                     user.password === this.passWord) {
                     console.log(user)
                     this.$store.commit('setActiveUser', user)
+                } else if (user.username != this.userName) {
+                    console.log("Wrong Username")
                 } else {
-                    console.log("Wrong password")
+                    console.log("Wrong Password")
                 }
 
             });
-           // this.userName = '',
-           // this.passWord = ''
+           this.userName = '',
+           this.passWord = ''
         }
-    },
+    }
 }
