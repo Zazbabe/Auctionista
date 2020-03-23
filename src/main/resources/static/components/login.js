@@ -39,16 +39,4 @@ export default {
            // this.passWord = ''
         }
     },
-
-    /*
-    for (let index = 0; index < this.users.length; index++) {
-        if (this.users[index].username == this.userName &&
-            this.users[index].password == this.passWord) {
-            console.log(this.users[index])
-            //return users[index]
-        } else {
-            console.log("Wrong username or password")
-        }
-    }
-    */
 }
