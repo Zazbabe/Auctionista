@@ -13,6 +13,8 @@ export default {
         <main>
           <router-view />
         </main>
+
+        <footer> Made from hard work</footer> 
       </div>
     `,
 }
