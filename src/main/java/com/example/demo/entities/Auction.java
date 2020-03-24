@@ -18,6 +18,9 @@ public class Auction {
     private String end_time;
     private String main_image;
 
+    @Transient
+    private String sellerUsername;
+
     public Auction() {
     }
 
@@ -83,5 +86,13 @@ public class Auction {
 
     public void setMain_image(String main_image) {
         this.main_image = main_image;
+    }
+
+    public String getSellerUsername() {
+        return sellerUsername;
+    }
+
+    public void setSellerUsername(String sellerUsername) {
+        this.sellerUsername = sellerUsername;
     }
 }

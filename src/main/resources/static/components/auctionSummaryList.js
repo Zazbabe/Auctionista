@@ -19,7 +19,7 @@ export default {
             <div class="auction-card-photo" style="background-image: url('https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?cs=srgb&dl=shallow-focus-photography-of-blue-alpine-car-1592384.jpg&fm=jpg');"> </div>  
                 Title: {{ auction.title }} <br>
                 Ending: {{ auction.end_time }} <br>
-                Seller: {{ auction.seller }} 
+                Seller: {{ auction.sellerUsername }}
         </li>
      </ul>
     `,
