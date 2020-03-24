@@ -90,6 +90,13 @@ ul {
     background-size: cover;
 }
 
+.auction-main-picture {
+    height: 300px;
+    width: 300px;
+    background-position: center;
+    background-size: cover;
+}
+
 .auction-details {
     display: flex;
     justify-content: center;
