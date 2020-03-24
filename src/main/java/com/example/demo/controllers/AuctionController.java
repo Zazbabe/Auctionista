@@ -23,6 +23,8 @@ public class AuctionController {
     public Auction getAuction(@PathVariable int id) {
         return auctionService.findAuction(id);
     }
+
+
 }
 
 

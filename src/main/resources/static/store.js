@@ -4,9 +4,10 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
+       
         users:[],
-        auctions:[]
-
+        auctions:[],
+        activeUser: ''
     },
     mutations: {
     // USERS 
@@ -16,6 +17,10 @@ export const store = new Vuex.Store({
         
         appendUser(state, user) {
             state.users.push(user)
+        },
+    // SET ACTIVE USER
+        setActiveUser(state, activeUser) {
+            state.activeUser = activeUser
         },
         
     // AUCTIONS
