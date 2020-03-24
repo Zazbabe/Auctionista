@@ -18,7 +18,7 @@ export default {
         :key="auction.id"
         @click="showAuctionDetails(auction.id)"
         class="auction-card"> 
-            <div class="auction-card-photo" style="background-image: url('https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?cs=srgb&dl=shallow-focus-photography-of-blue-alpine-car-1592384.jpg&fm=jpg');"> 
+            <div class="auction-card-photo" :style="{'background-image': 'url(' + auction.main_image + ')'}">
             </div>  
                 Title: {{ auction.title }} <br>
                 Ending: {{ auction.end_time }} <br>
