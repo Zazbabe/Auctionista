@@ -1,7 +1,7 @@
 export default {
     template: `
     <div class="auction-details">
-        <div class="a-pictures">här är en bild: {{auction.main_image}}</div>
+        <div class="auction-main-picture" :style="{'background-image': 'url(' + auction.main_image + ')'}"></div>
         <h2>{{auction.title}}</h2>
         <p>Seller: {{auction.sellerUsername}}</p>
         <p>Start time: {{auction.start_time}}</p>
