@@ -1,5 +1,9 @@
-export default {
+import auctionSummaryItem from './auctionSummaryItem.js'
 
+export default {
+    components: {
+        auctionSummaryItem
+    },
     data(){
      return {
          search:"",
@@ -13,17 +17,8 @@ export default {
     <input type="text" v-model="search" placeholder="Search title.."/>
         <label>Search title:</label>
     </div>
-    <ul> 
-        <li v-for="auction of auctions"
-        :key="auction.id"
-        @click="showAuctionDetails(auction.id)"
-        class="auction-card"> 
-            <div class="auction-card-photo" :style="{'background-image': 'url(' + auction.main_image + ')'}">
-            </div>  
-                Title: {{ auction.title }} <br>
-                Ending: {{ auction.end_time }} <br>
-                Seller: {{ auction.sellerUsername }}
-        </li>
+    <ul>
+        <auctionSummaryItem v-for="auction of auctions" :key="auction.id" :auction="auction"/>
      </ul>
      </div>
     `,
@@ -47,9 +42,7 @@ export default {
         
     },
     methods: {
-        showAuctionDetails(id) {
-            this.$router.push('/auctions/' + id)
-        }
+
     }
 }
 

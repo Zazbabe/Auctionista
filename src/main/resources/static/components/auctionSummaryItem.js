@@ -1,13 +1,17 @@
 export default {
     props: [
-        'id'
+        'auction'
     ],
     template: `
-    <div "> 
-        <textarea> 
-            {{ auctions[{{ id }}].description }}
-        </textarea>
-     </div>
+        <li
+            @click="showAuctionDetails(auction.id)"
+            class="auction-card">
+                <div class="auction-card-photo" :style="{'background-image': 'url(' + auction.main_image + ')'}">
+                </div>
+                    Title: {{ auction.title }} <br>
+                    Ending: {{ auction.end_time }} <br>
+                    Seller: {{ auction.sellerUsername }}
+        </li>
     `,
     computed: {
         auctions() {
@@ -15,5 +19,8 @@ export default {
         }
     },
     methods: {
+        showAuctionDetails(id) {
+            this.$router.push('/auctions/' + id)
+        }
     }
 }
