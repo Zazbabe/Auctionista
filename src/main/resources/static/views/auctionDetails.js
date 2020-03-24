@@ -3,7 +3,7 @@ export default {
     <div class="auction-details">
         <div class="a-pictures">här är en bild: {{auction.main_image}}</div>
         <h2>{{auction.title}}</h2>
-        <p>Säljare: {{auction.seller}}</p>
+        <p>Säljare: {{auction.sellerUsername}}</p>
         <p>Startade: {{auction.start_time}}</p>
         <p>Slutar: {{auction.end_time}}</p>
         <p class="a-description">Beskrivnig: {{auction.description}}</p>

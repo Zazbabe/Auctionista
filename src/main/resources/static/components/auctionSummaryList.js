@@ -22,7 +22,7 @@ export default {
             </div>  
                 Title: {{ auction.title }} <br>
                 Ending: {{ auction.end_time }} <br>
-                Seller: {{ auction.seller }} 
+                Seller: {{ auction.sellerUsername }}
         </li>
      </ul>
      </div>
