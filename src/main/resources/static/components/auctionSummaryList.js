@@ -7,21 +7,25 @@ export default {
 
     },
    
-   template: ` <div class="search-wrapper">
+   template: ` 
+   <div>
+   <div class="search-wrapper">
     <input type="text" v-model="search" placeholder="Search title.."/>
         <label>Search title:</label>
-        
+    </div>
     <ul> 
         <li v-for="auction of auctions"
         :key="auction.id"
         @click="showAuctionDetails(auction.id)"
         class="auction-card"> 
-            <div class="auction-card-photo" style="background-image: url('https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?cs=srgb&dl=shallow-focus-photography-of-blue-alpine-car-1592384.jpg&fm=jpg');"> </div>  
+            <div class="auction-card-photo" style="background-image: url('https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?cs=srgb&dl=shallow-focus-photography-of-blue-alpine-car-1592384.jpg&fm=jpg');"> 
+            </div>  
                 Title: {{ auction.title }} <br>
                 Ending: {{ auction.end_time }} <br>
                 Seller: {{ auction.sellerUsername }}
         </li>
      </ul>
+     </div>
     `,
    /* async created() {
         {
