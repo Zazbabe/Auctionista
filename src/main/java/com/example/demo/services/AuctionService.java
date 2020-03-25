@@ -32,6 +32,7 @@ public class AuctionService {
 
         return auction;
     }
+    
     public Auction createNewAuction(Auction auction) {
         return auctionRepo.save(auction);
     }
