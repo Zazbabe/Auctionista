@@ -34,6 +34,8 @@ export default {
     },
     methods: {
         async registerNewUser() {
+
+            // LÄGG TILL FÖR KORT LÖSEN MM
             let user = {
                 username: this.userName,
                 password: this.password,
