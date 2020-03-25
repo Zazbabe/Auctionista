@@ -30,6 +30,7 @@ export default {
                     user.password === this.passWord) {
                     console.log(user)
                     this.$store.commit('setActiveUser', user)
+                    console.log(this.$store.state.activeUser)
                 } else if (user.username != this.userName) {
                     console.log("Wrong Username")
                 } else {

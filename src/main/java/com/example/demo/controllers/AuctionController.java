@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.entities.Auction;
+import com.example.demo.repositories.AuctionRepo;
 import com.example.demo.services.AuctionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,11 @@ public class AuctionController {
     @GetMapping("/auctions/{id}")
     public Auction getAuction(@PathVariable int id) {
         return auctionService.findAuction(id);
+    }
+
+    @PostMapping("/auctions")
+    public Auction createNewAuction(@RequestBody Auction auction) {
+        return auctionService.createNewAuction(auction);
     }
 
 

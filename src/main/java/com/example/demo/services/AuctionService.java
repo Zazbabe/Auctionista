@@ -21,7 +21,6 @@ public class AuctionService {
         for(Auction auction : auctions) {
             auction.setSellerUsername(userRepo.findById(auction.getSeller()).get().getUsername());
         }
-
         return auctions;
     }
 
@@ -33,5 +32,9 @@ public class AuctionService {
 
         return auction;
     }
+    public Auction createNewAuction(Auction auction) {
+        return auctionRepo.save(auction);
+    }
+
 }
 

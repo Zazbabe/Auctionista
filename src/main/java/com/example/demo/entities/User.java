@@ -16,9 +16,9 @@ public class User {
     private String email;
     private String address;
     private String phone;
-
+                                    
     public User() {
-    }
+    }                
 
     public int getId() {
         return id;
