@@ -1,5 +1,6 @@
 import newUser from '../components/addNewUser.js'
 
+
 export default {
     components: {
         newUser
