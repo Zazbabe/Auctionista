@@ -1,4 +1,4 @@
 package com.example.demo.repositories;
 
-public interface BidRep {
+public interface BidRepo {
 }
