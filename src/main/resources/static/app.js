@@ -11,6 +11,8 @@ export default {
         
           <router-link to="/">Home</router-link>
           <router-link to="/register">Register</router-link>
+          <router-link to="/addAuction">Add Auction</router-link>
+
           <login @click="showLogin"></login>
         </nav>
         <div class="top-picture">
@@ -21,7 +23,7 @@ export default {
           <router-view />
         </main>
 
-        <footer> Made from hard work</footer> 
+        <footer class="footer"> Made by the dev-team at F.A.S.P </footer> 
       </div>
     `,
     methods: {
