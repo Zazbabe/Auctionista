@@ -7,4 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface BidRepo  extends CrudRepository<Bid, Integer> {
     public Bid findById(int id);
 
+
+
 }
