@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BidService {
@@ -19,7 +20,7 @@ public class BidService {
             return (List<CurrentBid>) bidRepo.findAll();
         }
 
-        public CurrentBid findHighestBidByAuctionId(int id) {
+        public Optional<CurrentBid> findHighestBidByAuctionId(int id) {
             return bidRepo.findById(id);
         }
 
