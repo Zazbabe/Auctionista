@@ -8,6 +8,7 @@ export default {
         <p>Seller: {{auction.sellerUsername}}</p>
         <p>Start time: {{auction.start_time}}</p>
         <p>End time: {{auction.end_time}}</p>
+        <p>Highest bid: {{ auction.highest_bid || '-' }}</p>
         <p class="a-description">Description: {{auction.description}}</p>
         </div>
     </div>
@@ -20,18 +21,27 @@ export default {
                 start_time: '',
                 end_time: '',
                 description: '',
-                bids: []
+                bids: [],
+                highest_bid: '-'
             }
         }
     },
 
     async created() {
         // all dynamic params
-        console.log(this.$route.params)
+        //console.log(this.$route.params)
 
         let auction = await fetch('/rest/auctions/' + this.$route.params.id)
         auction = await auction.json()
-        console.log(auction)
+        //console.log(auction)
+
+        let bids = await fetch('/rest/current_bid')
+        bids = await bids.json()
+        const bid = bids.find(bid => auction.id === bid.auction_id)
+
+        if(bid) {
+            auction.highest_bid = bid.max_bid
+        }
 
         this.auction = auction
     }
