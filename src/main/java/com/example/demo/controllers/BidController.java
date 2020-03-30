@@ -1,6 +1,8 @@
 package com.example.demo.controllers;
 
-import com.example.demo.entities.CurrentBid;
+import com.example.demo.entities.Auction;
+import com.example.demo.entities.Bid;
+import com.example.demo.entities.User;
 import com.example.demo.services.BidService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,14 +20,14 @@ public class BidController {
     @Autowired
     BidService bidService;
 
-    @GetMapping("/current_bid")
-    public List<CurrentBid> getAllCurrentBids() {
-        return bidService.findAllCurrentBids();
+    @GetMapping("/bids")
+    public List<Bid> getAllBids(){
+        return bidService.findAllBids();
     }
 
-    @GetMapping("/current_bid/{id}")
-    public Optional<CurrentBid> getCurrentBid(@PathVariable int id) {
-        return bidService.findHighestBidByAuctionId (id);
+    @GetMapping("/bids/{auction_id}")
+    public Optional<Bid> getHighest(@PathVariable int auction_id) {
+        return bidService.findHighestBid(auction_id);
     }
 
 }
