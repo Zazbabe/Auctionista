@@ -1,9 +1,11 @@
 //import { createNamespacedHelpers } from "./libs/vuex.esm.browser"
-import login from './components/login.js'
+import navbarLoginComponent from './components/navbarLoginComponent.js'
+import navbarLogoutComponent from './components/navbarLogoutComponent.js'
 
 export default {
     components: {
-      login
+      navbarLoginComponent,
+      navbarLogoutComponent
     },
     template: `
       <div id="app">
@@ -13,7 +15,8 @@ export default {
           <router-link to="/register">Register</router-link>
           <router-link to="/addAuction">Add Auction</router-link>
 
-          <login @click="showLogin"></login>
+          <navbarLogoutComponent v-if="isLoggedIn" />
+          <navbarLoginComponent v-else />
         </nav>
         <div class="top-picture">
           <div class="top-picture-text">AUCTIONISTA</div>
@@ -26,12 +29,21 @@ export default {
         <footer class="footer"> Made by the dev-team at F.A.S.P </footer> 
       </div>
     `,
-    methods: {
-      showLogin() {
+    async created() {
+        let user = await fetch('/auth/whoami')
 
-
-      }
-
-
+        try {
+          user = await user.json()
+          this.$store.commit('setUser', user)
+          console.log('Already logged in as...')
+          console.log(user);
+        } catch {
+          console.log('Client not authenticated');
+        }
+    },
+    computed: {
+        isLoggedIn() {
+            return this.$store.state.user
+        }
     }
 }
