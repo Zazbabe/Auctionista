@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/rest")
@@ -23,7 +24,7 @@ public class BidController {
     }
 
     @GetMapping("/current_bid/{id}")
-    public CurrentBid getCurrentBid(@PathVariable int id) {
+    public Optional<CurrentBid> getCurrentBid(@PathVariable int id) {
         return bidService.findHighestBidByAuctionId (id);
     }
 

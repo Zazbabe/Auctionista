@@ -62,7 +62,7 @@ async function getAuctionById(id) {
 //     auction = await auction.json()
 //     console.log(auction)
 
-
+/*
 async function createNewAuction(auction) {
     let auctionFromServer = await fetch('/rest/auctions', {
         method: 'POST',
@@ -86,4 +86,6 @@ async function createNewAuction(auction) {
                     console.log("Wrong username or password")
                 }
         }
+        
     }
+*/

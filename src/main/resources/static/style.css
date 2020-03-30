@@ -66,6 +66,8 @@ ul {
     height: 400px;
     padding: 7px;
     margin: 5px;
+<<<<<<< HEAD
+=======
     /*
 <<<<<<< HEAD
     border-radius: 5px;
@@ -74,6 +76,7 @@ ul {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 =======
 */
+>>>>>>> dev
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     flex-basis: 25%;
@@ -83,9 +86,12 @@ ul {
 
 .auction-card:hover {
     border: 1px solid gray;
+<<<<<<< HEAD
+=======
     /*
 >>>>>>> filter-auctions-by-title
 */
+>>>>>>> dev
 }
 
 .auction-card-photo {
@@ -99,32 +105,22 @@ ul {
     width: 300px;
     background-position: center;
     background-size: cover;
+    margin-right: 20px;
 }
 
 .auction-details {
     display: flex;
+    flex-flow: row;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
 }
-/*
-.auction-details p {
-    margin-left: 60%;
-    margin-right: 15%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    color: black;
+.auction-details > {
+    padding: 10px;
+
 }
-  detta är en dubblet vet inte hur en slår ihop 
-.auction-details h2 {
-    margin-left: 60%;
-    margin-right: 15%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    color: black;
+
+.footer {
+    margin-bottom: 0;
+    text-align: center;
+    opacity: 80%;
 }
-*/
