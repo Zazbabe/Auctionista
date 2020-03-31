@@ -33,6 +33,7 @@ async function createNewUser(user) {
     userFromServer = await userFromServer.json()
 }
 
+
 // usern under är bara test för createUser
 const user = {
     username: '',

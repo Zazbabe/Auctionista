@@ -35,9 +35,11 @@ export const router = new VueRouter({
 
     }
   ],
+  methods(){
   beforeEach: (to, from, next) => {
     if (to.matched.some(record => record.meta.reguiresLogin) && this.$store.state.user) 
     next()
     else next(false)
   }
+}
 });
