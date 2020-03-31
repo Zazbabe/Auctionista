@@ -12,6 +12,7 @@ export default {
         <p class="a-description">Description: {{auction.description}}</p>
         <label>Add bid:</label>
         <input type="bid" placeholder="add higher bid.."/>
+        <button>add</button>
         </div>
     </div>
     `,
