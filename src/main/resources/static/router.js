@@ -1,5 +1,7 @@
 import Vue from './libs/vue.esm.browser.js'
 import VueRouter from './libs/vue-router.esm.browser.js'
+import store from '/store.js'
+
 Vue.use(VueRouter)
 
 import home from './views/home.js'
@@ -28,7 +30,14 @@ export const router = new VueRouter({
     {
       name: "addAuction",
       path: '/addAuction',
-      component: addAuction
+      component: addAuction,
+      meta: {reguiresLogin: true}
+
     }
-  ]
+  ],
+  beforeEach: (to, from, next) => {
+    if (to.matched.some(record => record.meta.reguiresLogin) && this.$store.state.user) 
+    next()
+    else next(false)
+  }
 });
