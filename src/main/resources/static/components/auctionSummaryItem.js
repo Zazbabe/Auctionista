@@ -11,7 +11,7 @@ export default {
                     Title: {{ auction.title }} <br>
                     Ending: {{ auction.end_time }} <br>
                     Seller: {{ auction.sellerUsername }} <br/>
-                    Highest bid: {{auction.highest_bid || '-'}}
+                   
         </li>
     `,
     computed: {
