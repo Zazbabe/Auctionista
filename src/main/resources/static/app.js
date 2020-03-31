@@ -23,7 +23,7 @@ export default {
           <router-view />
         </main>
 
-        <footer class="footer"> Made by the dev-team at F.A.S.P </footer> 
+        <footer class="footer"> Made by the dev-team at J.F.A.S.P </footer> 
       </div>
     `,
     methods: {
