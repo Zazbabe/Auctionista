@@ -7,10 +7,10 @@ export default {
                 placeholder = "Enter description">
                   <input v-model = "reservePrice" type = "text"
                   placeholder = "Enter reserve price">
-                    <input v-model = "startTime" type = "text"
-                    placeholder = "Enter start date (yyyy-mm-dd)">
-                      <input v-model = "endTime" type = "text"
-                      placeholder = "Enter end date (yyyy-mm-dd)">
+                    <input v-model = "startTime" type = "date"
+                    placeholder = "Enter start date">
+                      <input v-model = "endTime" type = "date"
+                      placeholder = "Enter end date">
                         <input v-model = "mainImage" type = "text"
                         placeholder = "Enter img-url">
             
@@ -36,7 +36,7 @@ export default {
 
             // LÄGG TILL FÖR KORT LÖSEN MM
             let auction = {
-                seller: this.$store.state.activeUser.id,
+                seller: this.$store.state.user.id,
                 title: this.title,
                 description: this.description,
                 reserve_price: this.reservePrice,
@@ -63,7 +63,6 @@ export default {
             this.endTime = ''
             this.mainImage = ''
 */
-        
         }
     }
 }
