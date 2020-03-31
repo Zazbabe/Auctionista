@@ -1,7 +1,6 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.Bid;
-import com.example.demo.entities.User;
 import com.example.demo.repositories.BidRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +23,15 @@ public class BidService {
     public Optional<Bid> findHighestBid(int auction_id) {
         return bidRepo.findMaxBidById(auction_id);
     }
+
+    public Bid findBid(int id) {
+        return bidRepo.findById(id);
+    }
+
+    public Bid addNewBid(Bid bid) {
+        return bidRepo.save(bid);
+    }
+
 
 }
 
