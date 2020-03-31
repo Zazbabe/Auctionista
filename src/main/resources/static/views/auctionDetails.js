@@ -1,12 +1,16 @@
 export default {
     template: `
     <div class="auction-details">
-        <div class="a-pictures">här är en bild: {{auction.main_image}}</div>
+        <div class="auction-main-picture" :style="{'background-image': 'url(' + auction.main_image + ')'}">
+        </div>
+        <div>
         <h2>{{auction.title}}</h2>
-        <p>Säljare: {{auction.seller}}</p>
-        <p>Startade: {{auction.start_time}}</p>
-        <p>Slutar: {{auction.end_time}}</p>
-        <p class="a-description">Beskrivnig: {{auction.description}}</p>
+        <p>Seller: {{auction.sellerUsername}}</p>
+        <p>Start time: {{auction.start_time}}</p>
+        <p>End time: {{auction.end_time}}</p>
+        <p>Highest bid: {{ auction.highestBid }}</p>
+        <p class="a-description">Description: {{auction.description}}</p>
+        </div>
     </div>
     `,
     data() {
@@ -16,8 +20,9 @@ export default {
                 seller: '',
                 start_time: '',
                 end_time: '',
-                description: '',
-                bids: []
+                highestBid: '',
+                description: ''
+            
             }
         }
     },
@@ -28,8 +33,8 @@ export default {
 
         let auction = await fetch('/rest/auctions/' + this.$route.params.id)
         auction = await auction.json()
-        console.log(auction)
-
-        this.auction = auction
-    }
+      
+       this.auction = auction
+       
+     }
 }

@@ -4,25 +4,16 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
-        users:[],
-        auctions:[],
-        activeUser: ''
+       
+        user: null, // currently logged-in user
+        auctions: []
     },
     mutations: {
-    // USERS 
-        setUsers(state, users) {
-            state.users = users
+        // USER
+        setUser(state, user) {
+            state.user = user
         },
-        
-        appendUser(state, user) {
-            state.users.push(user)
-        },
-    // SET ACTIVE USER
-        setActiveUser(state, activeUser) {
-            state.activeUser = activeUser
-        },
-        
-    // AUCTIONS
+        // AUCTIONS
         setAuctions(state, auctions) {
             state.auctions = auctions
         },

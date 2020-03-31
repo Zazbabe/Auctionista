@@ -1,7 +1,6 @@
 package com.example.demo.entities;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "auctions")
@@ -16,7 +15,22 @@ public class Auction {
     private double reserve_price;
     private String start_time;
     private String end_time;
-    private int main_image;
+    private String main_image;
+
+    @Transient
+    private String sellerUsername;
+
+    @Transient
+
+    private  double highestBid;
+
+    public double getHighestBid() {
+        return highestBid;
+    }
+
+    public void setHighestBid(double highestBid) {
+        this.highestBid = highestBid;
+    }
 
     public Auction() {
     }
@@ -77,11 +91,19 @@ public class Auction {
         this.reserve_price = reserve_price;
     }
 
-    public int getMain_image() {
+    public String getMain_image() {
         return main_image;
     }
 
-    public void setMain_image(int main_image) {
+    public void setMain_image(String main_image) {
         this.main_image = main_image;
+    }
+
+    public String getSellerUsername() {
+        return sellerUsername;
+    }
+
+    public void setSellerUsername(String sellerUsername) {
+        this.sellerUsername = sellerUsername;
     }
 }
