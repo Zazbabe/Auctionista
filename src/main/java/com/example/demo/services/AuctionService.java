@@ -44,6 +44,7 @@ public class AuctionService {
         if ( auction == null ) return null;
 
         auction.setSellerUsername(userRepo.findById(auction.getSeller()).get().getUsername());
+        auction.setHighestBid(bidRepo.findMaxBidById(auction.getId()).get().getBid());
 
 
         return auction;
