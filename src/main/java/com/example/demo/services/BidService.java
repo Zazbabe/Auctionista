@@ -10,8 +10,7 @@ import java.util.Optional;
 
 @Service
 public class BidService {
-        @Autowired
-        BidRepo bidRepo;
+}
 
 //        @Autowired
 //    AuctionRepo auctionRepo;
