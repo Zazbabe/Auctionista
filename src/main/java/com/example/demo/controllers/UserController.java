@@ -23,11 +23,6 @@ public class UserController {
         return userService.findUserById(id);
     }
 
-    @PostMapping("/rest/users")
-    public User createNewUser(@RequestBody User user) {
-     return userService.createNewUser(user);
-    }
-
     @PostMapping("/auth/register")
     public User registerUser(@RequestBody User user) {
         return userService.registerUser(user);
