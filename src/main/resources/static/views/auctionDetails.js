@@ -8,6 +8,7 @@ export default {
         <p>Seller: {{auction.sellerUsername}}</p>
         <p>Start time: {{auction.start_time}}</p>
         <p>End time: {{auction.end_time}}</p>
+        <p>Highest bid: {{ auction.highestBid }}</p>
         <p class="a-description">Description: {{auction.description}}</p>
         </div>
     </div>
@@ -19,7 +20,8 @@ export default {
                 seller: '',
                 start_time: '',
                 end_time: '',
-                description: '',
+                highestBid: '',
+                description: ''
             
             }
         }
@@ -33,5 +35,6 @@ export default {
         auction = await auction.json()
       
        this.auction = auction
+       
      }
 }
