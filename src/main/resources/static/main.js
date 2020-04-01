@@ -1,7 +1,8 @@
 import Vue from './libs/vue.esm.browser.js'
 import {store} from './store.js'
-import {router} from './router.js'
+import router from './router.js'
 import app from './app.js'
+
 
 new Vue({
     store,
@@ -32,6 +33,7 @@ async function createNewUser(user) {
     })
     userFromServer = await userFromServer.json()
 }
+
 
 // usern under är bara test för createUser
 const user = {
