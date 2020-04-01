@@ -114,7 +114,7 @@ ul {
     padding: 5px;
 }
 
-#errorLoginMessage {
+#errorLoginMessage, #registrationErrorMessage {
     font-weight: bold;
     background-color: #F08080;
     border: 1px solid black;
