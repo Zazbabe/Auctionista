@@ -10,8 +10,9 @@ export default {
                 </div>
                     Title: {{ auction.title }} <br>
                     Ending: {{ auction.end_time }} <br>
+                    Highest bid: {{ auction.highestBid }} <br>
                     Seller: {{ auction.sellerUsername }} <br/>
-                    Highest bid: {{auction.highest_bid || '-'}}
+                   
         </li>
     `,
     computed: {
