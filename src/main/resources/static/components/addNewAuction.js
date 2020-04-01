@@ -1,17 +1,17 @@
 export default {
     template: `
         <form @submit.prevent = "addNewAuction">
-              <input v-model = "title" type = "text"
+              <input required v-model = "title" type = "text"
               placeholder = "Enter title">
-                <input v-model = "description" type = "text-box"
+                <input required v-model = "description" type = "text-box"
                 placeholder = "Enter description">
-                  <input v-model = "reservePrice" type = "text"
+                  <input required v-model = "reservePrice" type = "text"
                   placeholder = "Enter reserve price">
-                    <input v-model = "startTime" type = "date"
+                    <input required v-model = "startTime" type = "date"
                     placeholder = "Enter start date">
-                      <input v-model = "endTime" type = "date"
+                      <input required v-model = "endTime" type = "date"
                       placeholder = "Enter end date">
-                        <input v-model = "mainImage" type = "text"
+                        <input required v-model = "mainImage" type = "text"
                         placeholder = "Enter img-url">
             
             

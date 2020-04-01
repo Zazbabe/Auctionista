@@ -12,8 +12,8 @@ export default {
         <nav class="navbar-top">
         
           <router-link to="/">Home</router-link>
-          <router-link to="/register">Register</router-link>
-          <router-link v-if="$store.state.user" to="/addAuction" >Add Auction</router-link>
+          <router-link v-if="!isLoggedIn" to="/register">Register</router-link>
+          <router-link v-if="isLoggedIn" to="/addAuction" >Add Auction</router-link>
 
           <navbarLogoutComponent v-if="isLoggedIn" />
           <navbarLoginComponent v-else />
