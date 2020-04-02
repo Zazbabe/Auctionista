@@ -1,6 +1,6 @@
 
 export default {
-    props: ['auction_id'],
+    props: ['auction'],
    
     template: `
    
@@ -17,10 +17,7 @@ data() {
         return {
         bid: '',
         bidder: '',
-        bid_time: '',
-      
-        
-        
+        bid_time: ''
         }
     },
 
@@ -28,16 +25,13 @@ data() {
 
     methods: {
         async addNewBid() {
-
-            // LÄGG TILL FÖR KORT LÖSEN MM
             let NewBid = {
                 bid: this.bid,
                 bidder: this.$store.state.user.id,
                 bid_time: this.bid_time,
-              
-            
-
+                auction_id: this.auction.id
             }
+
             let result = await fetch('/rest/bids', {
                 method: 'POST',
                 headers: {
@@ -46,8 +40,8 @@ data() {
                 body: JSON.stringify(NewBid)
             })
             result = await result.json()
-            this.$store.commit('appendBid', result)
 
+            this.auction.highestBid = this.bid
             
             this.bid = ''
             this.bidder = ''
