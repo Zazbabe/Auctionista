@@ -32,6 +32,8 @@ body{
     padding: 4px;
     font-weight: 800;
     border-radius: 0 0 5px 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 .top-picture {
     background-image: url('./pictures/auction_hammer.jpg');
@@ -119,4 +121,10 @@ ul {
     background-color: #F08080;
     border: 1px solid black;
     padding: 5px;
+}
+.search-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
