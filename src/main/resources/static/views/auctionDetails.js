@@ -1,4 +1,10 @@
+import newBid from  '../components/addNewBid.js'
+
+
 export default {
+    components: {
+        newBid
+    },
     template: `
     <div class="auction-details">
         <div class="auction-main-picture" :style="{'background-image': 'url(' + auction.main_image + ')'}">
@@ -10,9 +16,8 @@ export default {
         <p>End time: {{auction.end_time}}</p>
         <p>Highest bid: {{ auction.highestBid }}</p>
         <p class="a-description">Description: {{auction.description}}</p>
-        <label>Add bid:</label>
-        <input type="bid" placeholder="add higher bid.."/>
-        <button>add</button>
+        <newBid />
+       
         </div>
     </div>
     `,

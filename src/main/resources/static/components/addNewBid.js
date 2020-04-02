@@ -1,5 +1,9 @@
+
 export default {
+  
     template: `
+   
+
   <form @submit.prevent = "addNewBid">
   <label>Bid here: </label>
   <input v-model = "bid" type="double" placeholder="add higher bid.."input>
@@ -9,14 +13,15 @@ export default {
   `,
 
 data() {
-    return {
-        // lägg till att hitta inloggad
+        return {
         bid: '',
         bidder: '',
         bid_time: '',
-        auction_id: '',
-    }
+        auction_id: ""
+        }
     },
+
+ 
 
     methods: {
         async addNewBid() {
@@ -26,7 +31,7 @@ data() {
                 bid: this.bid,
                 bidder: this.$store.state.user.id,
                 bid_time: this.bid_time,
-                // auction_id: this.$store.state.auctions.id
+                auction_id: this.auction_id
 
             }
             let result = await fetch('/rest/bids', {

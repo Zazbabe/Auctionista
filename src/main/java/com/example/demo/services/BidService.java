@@ -25,7 +25,7 @@ public class BidService {
     }
 
     public Bid findBid(int id) {
-        return bidRepo.findById(id);
+        return bidRepo.findBidById(id);
     }
 
     public Bid addNewBid(Bid bid) {
