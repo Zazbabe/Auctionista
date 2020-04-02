@@ -9,7 +9,5 @@ import java.util.Optional;
 @Repository
 public interface BidRepo  extends CrudRepository<Bid, Integer> {
 
-    Optional<Bid> findMaxBidById(int auction_id);
-
-    public Bid findById(int id);
+    Optional<Bid> findFirstByAuctionIdOrderByBidDesc(int auctionId);
 }

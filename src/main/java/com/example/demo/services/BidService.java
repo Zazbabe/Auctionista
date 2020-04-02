@@ -21,7 +21,7 @@ public class BidService {
     }
 
     public Optional<Bid> findHighestBid(int auction_id) {
-        return bidRepo.findMaxBidById(auction_id);
+        return bidRepo.findFirstByAuctionIdOrderByBidDesc(auction_id);
     }
 
     public Bid findBid(int id) {

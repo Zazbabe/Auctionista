@@ -1,8 +1,6 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.Auction;
-import com.example.demo.entities.Bid;
-import com.example.demo.entities.User;
 import com.example.demo.repositories.AuctionRepo;
 import com.example.demo.repositories.BidRepo;
 import com.example.demo.repositories.UserRepo;
@@ -10,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AuctionService {
@@ -21,7 +18,6 @@ public class AuctionService {
     UserRepo userRepo;
 
     @Autowired
-
     BidRepo bidRepo;
 
     public List<Auction> findAllAuctions() {
@@ -29,8 +25,7 @@ public class AuctionService {
 
         for(Auction auction : auctions) {
             auction.setSellerUsername(userRepo.findById(auction.getSeller()).get().getUsername());
-            auction.setHighestBid(bidRepo.findMaxBidById(auction.getId()).get().getBid());
-
+            bidRepo.findFirstByAuctionIdOrderByBidDesc(auction.getId()).ifPresent(bid -> auction.setHighestBid(bid.getBid()));
         }
         return auctions;
     }
@@ -44,8 +39,7 @@ public class AuctionService {
         if ( auction == null ) return null;
 
         auction.setSellerUsername(userRepo.findById(auction.getSeller()).get().getUsername());
-        auction.setHighestBid(bidRepo.findMaxBidById(auction.getId()).get().getBid());
-
+        bidRepo.findFirstByAuctionIdOrderByBidDesc(auction.getId()).ifPresent(bid -> auction.setHighestBid(bid.getBid()));
 
         return auction;
     }
