@@ -66,17 +66,6 @@ ul {
     height: 400px;
     padding: 7px;
     margin: 5px;
-<<<<<<< HEAD
-=======
-    /*
-<<<<<<< HEAD
-    border-radius: 5px;
-    flex-basis: 30%;
-    justify-content: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-=======
-*/
->>>>>>> dev
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     flex-basis: 25%;
@@ -86,12 +75,6 @@ ul {
 
 .auction-card:hover {
     border: 1px solid gray;
-<<<<<<< HEAD
-=======
-    /*
->>>>>>> filter-auctions-by-title
-*/
->>>>>>> dev
 }
 
 .auction-card-photo {
@@ -123,4 +106,17 @@ ul {
     margin-bottom: 0;
     text-align: center;
     opacity: 80%;
+}
+
+
+.navbarLogoutComponent {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#errorLoginMessage, #registrationErrorMessage {
+    font-weight: bold;
+    background-color: #F08080;
+    border: 1px solid black;
+    padding: 5px;
 }

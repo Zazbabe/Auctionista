@@ -1,14 +1,14 @@
-import newUser from '../components/addNewUser.js'
+import registerNewUserForm from '../components/registerNewUserForm.js'
 
 
 export default {
     components: {
-        newUser
+        registerNewUserForm
     },
     template: `
         <div>
             <h2> Register User </h2>
-            <newUser> </newUser>
+            <registerNewUserForm />
         </div>
     `
 }
