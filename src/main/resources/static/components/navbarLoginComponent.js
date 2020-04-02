@@ -52,16 +52,12 @@ export default {
                 console.log("Logged in successfully!")
                 this.userName = ''
                 this.passWord = ''
-                //this.$router.push('/')
 
                 let user = await fetch('/auth/whoami')
                 user = await user.json()
                 console.log(user)
                 this.$store.commit('setUser', user)
-                /*
-
-                console.log('Successfully logged in:', user)
-                */
+                this.$router.push('/')
               }
         }
     }
