@@ -1,6 +1,7 @@
 
 export default {
-  
+    props: ['auction_id'],
+   
     template: `
    
 
@@ -17,7 +18,9 @@ data() {
         bid: '',
         bidder: '',
         bid_time: '',
-        auction_id: ""
+      
+        
+        
         }
     },
 
@@ -31,7 +34,8 @@ data() {
                 bid: this.bid,
                 bidder: this.$store.state.user.id,
                 bid_time: this.bid_time,
-                auction_id: this.auction_id
+              
+            
 
             }
             let result = await fetch('/rest/bids', {
@@ -43,6 +47,12 @@ data() {
             })
             result = await result.json()
             this.$store.commit('appendBid', result)
+
+            
+            this.bid = ''
+            this.bidder = ''
+            this.bid_time = ''
+         
 
         }
             

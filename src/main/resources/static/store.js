@@ -7,7 +7,7 @@ export const store = new Vuex.Store({
        
         user: null, // currently logged-in user
         auctions: [],
-        // bid: ""
+         bid: []
     },
     mutations: {
         // USER
@@ -20,17 +20,20 @@ export const store = new Vuex.Store({
         },
         appendAuction (state, auction) {
             state.auctions.push(auction)
-        }
+        },
 
+
+    //   BIDS
+
+      setBid(state, bid) {
+        state.bid = bid
     },
 
-      // BIDS
-
-    //   setBid(state, bid) {
-    //     state.bid = bid
-    // },
+    appendBid (state, bid) {
+        state.bid.push(bid)
+    }
   
-
+    }
    // actions: {}
 })
 

@@ -16,7 +16,7 @@ export default {
         <p>End time: {{auction.end_time}}</p>
         <p>Highest bid: {{ auction.highestBid }}</p>
         <p class="a-description">Description: {{auction.description}}</p>
-        <newBid />
+        <newBid :auction_id="auction.id"/>
        
         </div>
     </div>
@@ -29,7 +29,8 @@ export default {
                 start_time: '',
                 end_time: '',
                 highestBid: '',
-                description: ''
+                description: '',
+              
             
             }
         }
