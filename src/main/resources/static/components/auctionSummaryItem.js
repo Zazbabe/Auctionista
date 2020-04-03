@@ -1,8 +1,15 @@
+import addNewBid from './addNewBid.js'
+
 export default {
+    components:{
+        addNewBid
+
+    },
     props: [
         'auction'
     ],
     template: `
+    <div>
         <li
             @click="showAuctionDetails(auction.id)"
             class="auction-card">
@@ -13,7 +20,13 @@ export default {
                     Highest bid: {{ auction.highestBid }} <br>
                     Seller: {{ auction.sellerUsername }} <br/>
                    
+                   
         </li>
+
+        <addNewBid  v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
+                   
+
+        </div>
     `,
     computed: {
         auctions() {
