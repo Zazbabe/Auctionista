@@ -6,7 +6,7 @@ export default {
    
 
   <form @submit.prevent = "addNewBid">
-  <label>Bid here: </label>
+  <!-- <label>Bid here: </label> -->
   <input v-model = "bid" type="double" required placeholder="add higher bid.."input>
   <button>Add bid</button>
   </form>
