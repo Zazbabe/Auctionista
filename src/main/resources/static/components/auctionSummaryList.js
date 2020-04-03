@@ -14,8 +14,8 @@ export default {
    template: ` 
    <div>
    <div class="search-wrapper">
-        <label>Search title:</label>
     <input type="text" v-model="search" placeholder="Search title.."/>
+        <label>Search title:</label>
     </div>
     <ul>
         <auctionSummaryItem v-for="auction of auctions" :key="auction.id" :auction="auction"/>

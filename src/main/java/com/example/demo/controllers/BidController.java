@@ -1,17 +1,11 @@
 package com.example.demo.controllers;
 
-import com.example.demo.entities.Auction;
 import com.example.demo.entities.Bid;
-import com.example.demo.entities.User;
 import com.example.demo.services.BidService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/rest")
@@ -25,9 +19,14 @@ public class BidController {
         return bidService.findAllBids();
     }
 
-    @GetMapping("/bids/{auction_id}")
-    public Optional<Bid> getHighest(@PathVariable int auction_id) {
-        return bidService.findHighestBid(auction_id);
+    @GetMapping("/bids/{id}")
+    public Bid getBid(@PathVariable int id) {
+        return bidService.findBid(id);
+    }
+
+    @PostMapping("/bids")
+    public Bid addBid(@RequestBody Bid bid) {
+        return bidService.addNewBid(bid);
     }
 
 }
