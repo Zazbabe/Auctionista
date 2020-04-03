@@ -24,14 +24,5 @@ public class BidService {
         return bidRepo.findFirstByAuctionIdOrderByBidDesc(auction_id);
     }
 
-    public Bid findBid(int id) {
-        return bidRepo.findBidById(id);
-    }
-
-    public Bid addNewBid(Bid bid) {
-        return bidRepo.save(bid);
-    }
-
-
 }
 
