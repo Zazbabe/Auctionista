@@ -52,11 +52,11 @@ public class Bid {
         this.bid_time = bid_time;
     }
 
-    public int getAuction_id() {
+    public int getAuctionId() {
         return auctionId;
     }
 
-    public void setAuction_id(int auctionId) {
+    public void setAuctionId(int auctionId) {
         this.auctionId = auctionId;
     }
 }
