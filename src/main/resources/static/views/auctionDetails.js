@@ -16,7 +16,7 @@ export default {
         <p>End time: {{auction.end_time}}</p>
         <p>Highest bid: {{ auction.highestBid }}</p>
         <p class="a-description">Description: {{auction.description}}</p>
-        <newBid :auction="auction" v-if="not_owner"/>
+        <newBid :auction="auction" v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
        
         </div>
     </div>
@@ -24,7 +24,7 @@ export default {
     data() {
         return {
 
-            not_owner: 'true',
+
             
             auction: {
                 
@@ -41,34 +41,6 @@ export default {
         }
     },
 
-
-        computed: {
-
-        
-
-        check_owner() {
-
-
-            if(this.$store.state.user.id != null){
-
-            try {
-
-                    
-                            if(this.auction.seller == this.$store.state.user.id) {
-                    return this.not_owner = false;
-                }}
-
-            catch(error) {
-                console.error(error)
-
-            };}
-            return this.not_owner = true
-        }
-  
-
-        }
-        
-    ,
 
 
 
@@ -91,8 +63,6 @@ export default {
         auction = await auction.json()
       
        this.auction = auction
-       console.log(this.auction.seller)
-       console.log(this.$store.state.user.id)
 
      },
 

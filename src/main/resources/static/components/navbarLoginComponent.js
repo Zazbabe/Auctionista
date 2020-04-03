@@ -8,10 +8,10 @@ export default {
             <input v-model="password" type="password" required
                 placeholder = "Enter password">
             <button>Login</button>
-            <span v-if="errorLogin" id="errorLoginMessage">Wrong username or password!</span>
         </fieldset>
     </form>
 `,
+//          <span v-if="errorLogin" id="errorLoginMessage">Wrong username or password!</span>
     async created() {
         /*
         let users = await fetch('/rest/users')
@@ -47,6 +47,7 @@ export default {
 
               if(response.url.includes('error')) {
                 console.log('Wrong username/password');
+                alert("Wrong username or password!");
                 this.errorLogin = true
               } else {
                 console.log("Logged in successfully!")
