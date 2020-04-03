@@ -94,7 +94,7 @@ export default {
 
       updated() {
 
-        this.check_owner()
+        this.check_owner;
 
        
        console.log(this.auction.seller)
@@ -105,7 +105,7 @@ export default {
      beforeUpdate() {
 
 
-        this.check_owner()
+        this.check_owner;
 
         
 
