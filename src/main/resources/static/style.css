@@ -32,6 +32,7 @@ body{
     padding: 4px;
     font-weight: 800;
     border-radius: 0 0 5px 0;
+    margin-right: auto;
 }
 .top-picture {
     background-image: url('./pictures/auction_hammer.jpg');
