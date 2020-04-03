@@ -14,16 +14,36 @@ export default {
   `,
 
 data() {
+
+
+
+    
+
+        
         return {
+
         bid: '',
         bidder: '',
         bid_time: ''
         }
     },
 
+
+
+
+
+
+
+
  
 
     methods: {
+
+
+
+
+        
+
         async addNewBid() {
             let NewBid = {
                 bid: this.bid,
@@ -48,7 +68,23 @@ data() {
             this.bid_time = ''
          
 
-        }
+        },
+
+      
+
+
+
+        
+
+
+
+   
+
+
+
+    }
+
+
             
               
 
@@ -59,4 +95,4 @@ data() {
 }
 
 
-}
+
