@@ -8,6 +8,7 @@ import home from './views/home.js'
 import register from './views/register.js'
 import auctionDetails from './views/auctionDetails.js'
 import addAuction from './views/addAuction.js'
+import userDetails from './views/userDetails.js'
 import notFound from './views/notFound.js'
 
 const router = new VueRouter({
@@ -34,6 +35,11 @@ const router = new VueRouter({
       meta: {
         reguiresAuth: true
       }
+    },
+    {
+        name: 'userDetails',
+        path: '/users/:id',
+        component: userDetails
     },
     {
       path: "/404",
