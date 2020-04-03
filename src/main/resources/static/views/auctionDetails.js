@@ -46,7 +46,7 @@ export default {
 
         
 
-        check_owner() {
+        check_owner: function() {
 
 
             if(this.$store.state.user.id != null){
@@ -89,10 +89,30 @@ export default {
         auction = await auction.json()
       
        this.auction = auction
-       console.log(this.auction.seller)
-       console.log(this.$store.state.user.id)
 
      },
+
+      updated() {
+
+        this.check_owner()
+
+       
+       console.log(this.auction.seller)
+       console.log(this.$store.state.user.id)
+     },
+
+
+     beforeUpdate() {
+
+
+        this.check_owner()
+
+        
+
+       
+        console.log(this.auction.seller)
+        console.log(this.$store.state.user.id)
+      }
 
 
 }
