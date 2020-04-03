@@ -28,7 +28,7 @@ data() {
             let NewBid = {
                 bid: this.bid,
                 bidder: this.$store.state.user.id,
-                bid_time: this.bid_time,
+                bid_time: new Date(),
                 auction_id: this.auction.id
             }
 
