@@ -25,6 +25,7 @@ body{
     height: 60px;
     padding: 20px;
     position: fixed;
+    z-index: 100;
 }
 .navbar-top a {
     text-decoration: none;
@@ -120,4 +121,11 @@ ul {
     background-color: #F08080;
     border: 1px solid black;
     padding: 5px;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
