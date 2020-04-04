@@ -23,7 +23,7 @@ export default {
                    
         </li>
 
-        <addNewBid  v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
+        <addNewBid :auction="auction" v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
                    
 
         </div>

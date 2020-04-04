@@ -14,11 +14,6 @@ export default {
   `,
 
 data() {
-
-
-
-    
-
         
         return {
 
@@ -30,19 +25,7 @@ data() {
 
 
 
-
-
-
-
-
- 
-
     methods: {
-
-
-
-
-        
 
         async addNewBid() {
             let NewBid = {
