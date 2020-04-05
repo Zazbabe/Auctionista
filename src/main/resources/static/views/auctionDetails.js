@@ -16,7 +16,8 @@ export default {
         <p>End time: {{auction.end_time}}</p>
         <p>Highest bid: {{ auction.highestBid }}</p>
         <p class="a-description">Description: {{auction.description}}</p>
-       <span>Bid Here</span> <newBid :auction="auction" v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
+       <span>Bid Here</span> <newBid :auction="auction"
+        v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
        
         </div>
     </div>

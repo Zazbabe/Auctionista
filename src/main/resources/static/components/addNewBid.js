@@ -7,8 +7,10 @@ export default {
 
   <form @submit.prevent = "addNewBid">
   <!-- <label>Bid here: </label> -->
-  <input v-model = "bid" type="double" required placeholder="add higher bid.."input>
-  <button>Add bid</button>
+  <input v-model = "bid"type="double" required placeholder="add higher bid.." input 
+  oninvalid="this.setCustomValidity('Please enter a valid Bid')" >
+  <button>Add bid</button><br>
+  <span>{{ error }}</span>
   </form>
   <!-- <p>You bid: {{bid.bid}}</p> -->
   `,
@@ -19,7 +21,10 @@ data() {
 
         bid: '',
         bidder: '',
-        bid_time: ''
+        bid_time: '',
+        error: ""
+      
+
         }
     },
 
@@ -32,7 +37,18 @@ data() {
                 bid: this.bid,
                 bidder: this.$store.state.user.id,
                 bid_time: new Date(),
-                auction_id: this.auction.id
+                auction_id: this.auction.id  
+                
+                
+            }
+            if (this.bid < this.auction.highestBid) {
+                return this.error = "Error: add higher bid than current"
+       
+            }else {
+        
+            
+             this.auction.highestBid = this.bid
+           
             }
 
             let result = await fetch('/rest/bids', {
@@ -44,11 +60,11 @@ data() {
             })
             result = await result.json()
 
-            this.auction.highestBid = this.bid
             
-            this.bid = ''
-            this.bidder = ''
-            this.bid_time = ''
+            
+            // this.bid = ''
+            // this.bidder = ''
+            // this.bid_time = ''
          
 
         },
