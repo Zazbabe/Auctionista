@@ -13,7 +13,9 @@ public class Bid {
     private double bid;
     private int bidder;
     private String bid_time;
-    private int auction_id;
+
+    @Column(name="auction_id")
+    private int auctionId;
 
     public Bid() {
     }
@@ -51,10 +53,10 @@ public class Bid {
     }
 
     public int getAuction_id() {
-        return auction_id;
+        return auctionId;
     }
 
-    public void setAuction_id(int auction_id) {
-        this.auction_id = auction_id;
+    public void setAuction_id(int auctionId) {
+        this.auctionId = auctionId;
     }
 }
