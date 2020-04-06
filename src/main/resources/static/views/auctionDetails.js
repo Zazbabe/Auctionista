@@ -58,14 +58,29 @@ export default {
 
         
         // all dynamic params
-        console.log(this.$route.params)
+        //console.log(this.$route.params)
 
         let auction = await fetch('/rest/auctions/' + this.$route.params.id)
         auction = await auction.json()
       
        this.auction = auction
 
+       // console.log('Adding setInterval...')
+       this.fetchInterval = setInterval(async () => {
+            let highestBids = await fetch('/rest/bids/highest?auctions=' + this.auction.id)
+            highestBids = await highestBids.json()
+            if(highestBids && highestBids.length === 1) {
+                let highestBid = highestBids[0]
+                this.auction.highestBid = highestBid.bid
+            }
+            //console.log(highestBids)
+       	}, 1000)
      },
+
+     beforeDestroy() {
+        //console.log("Removing setInterval...")
+        clearInterval(this.fetchInterval)
+     }
 
 
 }
