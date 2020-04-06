@@ -22,16 +22,21 @@ export default {
      </ul>
      </div>
     `,
-   /* async created() {
-        {
-            let auctions = await fetch('/rest/auctions')
-            auctions = await auctions.json()
-            console.log(auctions)
-
-            this.$store.commit('setAuctions', auctions)
-        }
+   async created() {
+            //console.log('Adding setInterval...')
+            this.fetchInterval = setInterval(async () => {
+                let auction_ids = this.$store.state.auctions.map(auction => auction.id.toString())
+                let auctions_query_string = auction_ids.join(',')
+                let bids = await fetch('/rest/bids/highest?auctions=' + auctions_query_string)
+                bids = await bids.json()
+                //console.log('bids...', bids)
+            	this.$store.commit('updateHighestBids', bids)
+            }, 1000)
     },
-*/
+    beforeDestroy() {
+        //console.log('Removing setInterval...')
+        clearInterval(this.fetchInterval)
+    },
     computed: {
         auctions() {
             return this.$store.state.auctions.filter((auction) => {
