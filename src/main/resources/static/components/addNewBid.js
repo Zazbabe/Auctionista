@@ -61,9 +61,9 @@ data() {
 
             
             
-            // this.bid = ''
-            // this.bidder = ''
-            // this.bid_time = ''
+            this.bid = ''
+            this.bidder = ''
+            this.bid_time = ''
          
 
         },
