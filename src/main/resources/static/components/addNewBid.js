@@ -7,10 +7,10 @@ export default {
 
   <form @submit.prevent = "addNewBid">
   <!-- <label>Bid here: </label> -->
-  <input v-model = "bid"type="double" required placeholder="add higher bid.." input 
+  <input v-model = "bid"type="int" required placeholder="add higher bid.." input 
   oninvalid="this.setCustomValidity('Please enter a valid Bid')" >
   <button>Add bid</button><br>
-  <span>{{ error }}</span>
+  <span>{{ valid }}</span>
   </form>
   <!-- <p>You bid: {{bid.bid}}</p> -->
   `,
@@ -22,7 +22,7 @@ data() {
         bid: '',
         bidder: '',
         bid_time: '',
-        error: ""
+        valid: ""
       
 
         }
@@ -41,13 +41,13 @@ data() {
                 
                 
             }
-            if (this.bid < this.auction.highestBid) {
-                return this.error = "Error: add higher bid than current"
+            if (this.bid <= this.auction.highestBid) {
+                return this.valid = "***Error*** invalid bid: add higher bid than current"
        
             }else {
         
-            
              this.auction.highestBid = this.bid
+             this.valid = "Successful you bid at: "+ new Date()
            
             }
 
