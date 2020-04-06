@@ -7,8 +7,7 @@ export default {
 
   <form @submit.prevent = "addNewBid">
   <!-- <label>Bid here: </label> -->
-  <input v-model = "bid"type="int" required placeholder="add higher bid.." input 
-  oninvalid="this.setCustomValidity('Please enter a valid Bid')" >
+  <input v-model = "bid"type="int" required placeholder="add higher bid.." input>
   <button>Add bid</button><br>
   <span>{{ valid }}</span>
   </form>
