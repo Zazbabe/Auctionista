@@ -63,7 +63,7 @@ ul {
 .auction-card  {
     list-style: none;
     background-color: rgb(245, 244, 244);
-    height: 400px;
+    min-height: 400px;
     padding: 7px;
     margin: 5px;
     border-radius: 8px;

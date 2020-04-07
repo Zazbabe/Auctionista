@@ -11,21 +11,17 @@ export default {
     template: `
     <div>
         <li
-            @click="showAuctionDetails(auction.id)"
+            @click.self="showAuctionDetails(auction.id)"
             class="auction-card">
-                <div class="auction-card-photo" :style="{'background-image': 'url(' + auction.main_image + ')'}">
+                <div @click.self="showAuctionDetails(auction.id)" class="auction-card-photo" :style="{'background-image': 'url(' + auction.main_image + ')'}">
                 </div>
                     Title: {{ auction.title }} <br>
                     Ending: {{ auction.end_time }} <br>
                     Highest bid: {{ auction.highestBid }} <br>
                     Seller: {{ auction.sellerUsername }} <br/>
                    
-                   
+            <addNewBid :auction="auction" v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
         </li>
-
-        <addNewBid :auction="auction" v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
-                   
-
         </div>
     `,
     computed: {
