@@ -2,9 +2,9 @@
     box-sizing: border-box;
 }
 main {
-    
     padding: 50px 15px 0 15px;
     padding-top: 50px;
+
 }
 
 body{
@@ -40,8 +40,6 @@ body{
     height: 400px;
     background-position: center;
     background-size: cover;
-    align-items: center;
-    justify-content: center;
 }
 .top-picture-text {
     position: absolute;
@@ -127,4 +125,24 @@ ul {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+}
+.register {
+    
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    background-color: rgb(245, 244, 244);
+    justify-content: center;
+    background-size: cover;
+    width: 160px;
+
+}
+.registerform {
+    text-align: right;
+    background-color: rgb(245, 244, 244);
+    background-size: cover;
+    background-position: center;
+    width: 230px;
+    
 }

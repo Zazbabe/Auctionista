@@ -6,8 +6,8 @@ export default {
         registerNewUserForm
     },
     template: `
-        <div>
-            <h2> Register User </h2>
+        <div align="center">
+            <h2 class = "register"> Register User </h2>
             <registerNewUserForm />
         </div>
     `
