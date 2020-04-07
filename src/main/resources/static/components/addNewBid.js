@@ -46,7 +46,7 @@ data() {
             }else {
         
              this.auction.highestBid = this.bid
-             this.valid = "Successful you bid at: "+ new Date()
+             this.valid = "Successful you bid at: "+ new Date().toLocaleString()
            
             }
 
