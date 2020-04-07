@@ -18,7 +18,7 @@ export default {
         <p>End time: {{auction.end_time}}</p>
         <p>Highest bid: {{ auction.highestBid }}</p>
         <p class="a-description">Description: {{auction.description}}</p>
-        <router-link v-if="!isLoggedIn && this.$store.state.user == null " to="/register">Click here to create an account or login to bid!</router-link>
+        <router-link v-if="this.$store.state.user == null " to="/register">Click here to create an account or login to bid!</router-link>
         <navbarLoginComponent v-if ="this.$store.state.user == null"/>
         <newBid :auction="auction"
         v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
