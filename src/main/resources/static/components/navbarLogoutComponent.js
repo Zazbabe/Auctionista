@@ -10,7 +10,6 @@ export default {
             fetch('/logout')
             // reset user on logout
             this.$store.commit('setUser', null)
-            console.log('Successfully logged out');
         }
     }
 }

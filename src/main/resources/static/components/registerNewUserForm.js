@@ -1,8 +1,7 @@
 export default {
     template: `
     <div>
-        <p v-if="registrationError" id="registrationErrorMessage">There was an error during registration, please try again!</p>
-        <form @submit.prevent = "registerNewUser">
+        <form @submit.prevent = "registerNewUser" class = "registerform">
             <label>Username: <input v-model="username" type="text" placeholder="Enter username" required></label><br/>
             <label>Password: <input v-model="password" type="password" placeholder="Enter password" required></label><br/>
             <label>First name: <input v-model="firstName" type="text" placeholder="Enter first name" required></label><br/>
@@ -14,6 +13,8 @@ export default {
         </form>
     </div>
     `,
+    //         <p v-if="registrationError" id="registrationErrorMessage">There was an error during registration, please try again!</p>
+
     data() {
         return {
             username: '',
@@ -72,6 +73,7 @@ export default {
 
               if(response.url.includes('error')) {
                 console.log('Wrong username/password')
+                alert("There was an error during registration, please try again!");
               } else {
                     console.log("Logged in successfully!")
                     this.userName = ''

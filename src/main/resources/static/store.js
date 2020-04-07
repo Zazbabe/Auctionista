@@ -22,6 +22,12 @@ export const store = new Vuex.Store({
         appendAuction (state, auction) {
             state.auctions.push(auction)
         },
+        updateHighestBids(state, bids) {
+            bids.forEach(bid => {
+                let auction = state.auctions.find(auction => auction.id === bid.auction_id)
+                auction.highestBid = bid.bid
+            })
+        },
 
 
     //   BIDS

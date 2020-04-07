@@ -6,50 +6,48 @@ export default {
    
 
   <form @submit.prevent = "addNewBid">
-  <!-- <label>Bid here: </label> -->
-  <input v-model = "bid" type="double" required placeholder="add higher bid.."input>
-  <button>Add bid</button>
+
+  <input v-model = "bid"type="int" required placeholder="add higher bid.." input>
+  <button>Add bid</button><br>
+  <span>{{ valid }}</span>
   </form>
-  <!-- <p>You bid: {{bid.bid}}</p> -->
+ 
   `,
 
 data() {
-
-
-
-    
-
         
         return {
 
         bid: '',
         bidder: '',
-        bid_time: ''
+        bid_time: '',
+        valid: ""
+      
+
         }
     },
 
 
 
-
-
-
-
-
- 
-
     methods: {
-
-
-
-
-        
 
         async addNewBid() {
             let NewBid = {
                 bid: this.bid,
                 bidder: this.$store.state.user.id,
                 bid_time: new Date(),
-                auction_id: this.auction.id
+                auction_id: this.auction.id  
+                
+                
+            }
+            if (this.bid <= this.auction.highestBid) {
+                return this.valid = "***Error*** invalid bid: add higher bid than current"
+       
+            }else {
+        
+             this.auction.highestBid = this.bid
+             this.valid = "Successful you bid at: "+ new Date()
+           
             }
 
             let result = await fetch('/rest/bids', {
@@ -61,7 +59,7 @@ data() {
             })
             result = await result.json()
 
-            this.auction.highestBid = this.bid
+            
             
             this.bid = ''
             this.bidder = ''

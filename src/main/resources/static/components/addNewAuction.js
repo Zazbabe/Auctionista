@@ -53,8 +53,8 @@ export default {
             })
             result = await result.json()
             this.$store.commit('appendAuction', result)
-/*
 
+//clearing the fields
             this.seller = ''
             this.title = ''
             this.description = ''
@@ -62,7 +62,7 @@ export default {
             this.startTime = ''
             this.endTime = ''
             this.mainImage = ''
-*/
+
         }
     }
 }
