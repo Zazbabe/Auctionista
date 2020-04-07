@@ -7,7 +7,7 @@ export default {
 
   <form @submit.prevent = "addNewBid">
 
-  <input v-model = "bid"type="int" required placeholder="add higher bid.." input>
+  <input v-model = "bid" type="text" required placeholder="add higher bid..">
   <button>Add bid</button><br>
   <span>{{ valid }}</span>
   </form>
@@ -40,13 +40,13 @@ data() {
                 
                 
             }
-            if (this.bid <= this.auction.highestBid) {
+            if (isNaN(this.bid) || this.bid <= this.auction.highestBid) {
                 return this.valid = "***Error*** invalid bid: add higher bid than current"
        
             }else {
         
              this.auction.highestBid = this.bid
-             this.valid = "Successful you bid at: "+ new Date()
+             this.valid = "Successful you bid at: "+ new Date().toLocaleString()
            
             }
 
