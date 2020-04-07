@@ -35,10 +35,8 @@ export default {
         try {
           user = await user.json()
           this.$store.commit('setUser', user)
-          console.log('Already logged in as...')
-          console.log(user);
         } catch {
-          console.log('Client not authenticated');
+
         }
     },
     computed: {

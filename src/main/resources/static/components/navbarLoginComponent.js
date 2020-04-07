@@ -37,7 +37,7 @@ export default {
               + '&password=' +
               encodeURIComponent(this.password)
 
-              console.log(credentials);
+
 
               let response = await fetch("/login", {
                 method: "POST",
@@ -46,23 +46,20 @@ export default {
               });
 
               if(response.url.includes('error')) {
-                console.log('Wrong username/password');
+
                 alert("Wrong username or password!");
                 this.errorLogin = true
               } else {
-                console.log("Logged in successfully!")
+
                 this.userName = ''
                 this.passWord = ''
                 //this.$router.push('/')
 
                 let user = await fetch('/auth/whoami')
                 user = await user.json()
-                console.log(user)
-                this.$store.commit('setUser', user)
-                /*
 
-                console.log('Successfully logged in:', user)
-                */
+                this.$store.commit('setUser', user)
+
               }
         }
     }
