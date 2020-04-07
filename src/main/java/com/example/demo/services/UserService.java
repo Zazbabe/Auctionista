@@ -37,8 +37,4 @@ public class UserService {
         return userRepo.findById(id);
     }
 
-    public User createNewUser(User user) {
-        return userRepo.save(user);
-    }
-
 }
