@@ -40,7 +40,7 @@ data() {
                 
                 
             }
-            if (this.bid <= this.auction.highestBid) {
+            if (isNaN(this.bid) || this.bid <= this.auction.highestBid) {
                 return this.valid = "***Error*** invalid bid: add higher bid than current"
        
             }else {
