@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+main {
+    padding: 50px 15px 0 15px;
+    padding-top: 50px;
+
+}
+
+body{
+    margin: 0;
+    background-image: url('./pictures/white-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-top {
+    display: flex;
+    background-image: url('./pictures/white-background.jpg');
+    background-blend-mode: screen;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    position: fixed;
+    z-index: 100;
+}
+.navbar-top a {
+    text-decoration: none;
+    color: black;
+    padding: 4px;
+    font-weight: 800;
+    border-radius: 0 0 5px 0;
+    margin-right: auto;
+}
+.top-picture {
+    background-image: url('./pictures/auction_hammer.jpg');
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+}
+.top-picture-text {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 120px;
+    font-weight: 1500;
+}
+
+ul {
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 0 0 0;
+}
+
+.auction-card  {
+    list-style: none;
+    background-color: rgb(245, 244, 244);
+    min-height: 400px;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.auction-card:hover {
+    border: 1px solid gray;
+}
+
+.auction-card-photo {
+    height: 300px;
+    min-width: 25pc;
+    background-position: center;
+    background-size: cover;
+}
+
+.auction-main-picture {
+    height: 300px;
+    width: 300px;
+    background-position: center;
+    background-size: cover;
+    margin-right: 20px;
+}
+
+.auction-details {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+.auction-details > {
+    padding: 10px;
+
+}
+
+.footer {
+    margin-bottom: 0;
+    text-align: center;
+    opacity: 80%;
+}
+
+
+.navbarLogoutComponent {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#errorLoginMessage, #registrationErrorMessage {
+    font-weight: bold;
+    background-color: #F08080;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.register {
+    
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    background-color: rgb(245, 244, 244);
+    justify-content: center;
+    background-size: cover;
+    width: 160px;
+
+}
+.registerform {
+    text-align: right;
+    background-color: rgb(245, 244, 244);
+    background-size: cover;
+    background-position: center;
+    width: 230px;
+    
+}
