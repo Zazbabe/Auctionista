@@ -22,7 +22,7 @@ export default {
         <navbarLoginComponent v-if ="this.$store.state.user == null"/>
         <newBid :auction="auction"
         v-if= "Date.parse(this.auction.end_time) > Date.now() && this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
-       <p v-else>***This Product can not accept anymore bids***</p>
+       <p v-else-if= "Date.parse(this.auction.end_time) < Date.now()">***This Product can not accept anymore bids***</p>
         </div>
     </div>
     `,
