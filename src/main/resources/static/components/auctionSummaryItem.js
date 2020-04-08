@@ -20,7 +20,8 @@ export default {
                     Highest bid: {{ auction.highestBid }} <br>
                     Seller: {{ auction.sellerUsername }} <br/>
                    
-            <addNewBid :auction="auction" v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
+            <addNewBid :auction="auction" v-if="Date.parse(this.auction.end_time) > Date.now() && this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
+            <p v-else>***Auction expired***</p>
         </li>
         </div>
     `,
