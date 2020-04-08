@@ -5,32 +5,47 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
        
-        users:[],
-        auctions:[],
-        activeUser: ''
+        user: null, // currently logged-in user
+        auctions: [],
+         bid: [],
+         bidder: null,
     },
     mutations: {
-    // USERS 
-        setUsers(state, users) {
-            state.users = users
+        // USER
+        setUser(state, user) {
+            state.user = user
         },
-        
-        appendUser(state, user) {
-            state.users.push(user)
-        },
-    // SET ACTIVE USER
-        setActiveUser(state, activeUser) {
-            state.activeUser = activeUser
-        },
-        
-    // AUCTIONS
+        // AUCTIONS
         setAuctions(state, auctions) {
             state.auctions = auctions
         },
         appendAuction (state, auction) {
             state.auctions.push(auction)
-        }
+        },
+        updateHighestBids(state, bids) {
+            bids.forEach(bid => {
+                let auction = state.auctions.find(auction => auction.id === bid.auction_id)
+                auction.highestBid = bid.bid
+            })
+        },
 
+
+    //   BIDS
+
+      setBid(state, bid) {
+        state.bid = bid
     },
+
+    setBidder(state, bidder) {
+        state.bidder = bidder
+    },
+
+    appendBid (state, bid) {
+        state.bid.push(bid)
+    }
+  
+    }
    // actions: {}
 })
+
+export default store

@@ -1,7 +1,8 @@
 import Vue from './libs/vue.esm.browser.js'
 import {store} from './store.js'
-import {router} from './router.js'
+import router from './router.js'
 import app from './app.js'
+
 
 new Vue({
     store,
@@ -33,6 +34,7 @@ async function createNewUser(user) {
     userFromServer = await userFromServer.json()
 }
 
+
 // usern under är bara test för createUser
 const user = {
     username: '',
@@ -62,7 +64,7 @@ async function getAuctionById(id) {
 //     auction = await auction.json()
 //     console.log(auction)
 
-
+/*
 async function createNewAuction(auction) {
     let auctionFromServer = await fetch('/rest/auctions', {
         method: 'POST',
@@ -86,4 +88,6 @@ async function createNewAuction(auction) {
                     console.log("Wrong username or password")
                 }
         }
+        
     }
+*/
