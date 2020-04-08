@@ -21,7 +21,7 @@ export default {
         <router-link v-if="this.$store.state.user == null " to="/register">Click here to create an account or login to bid!</router-link>
         <navbarLoginComponent v-if ="this.$store.state.user == null"/>
         <newBid :auction="auction"
-        v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
+        v-if= "Date.parse(this.auction.end_time) > Date.now() && this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
        
         </div>
     </div>
