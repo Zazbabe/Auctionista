@@ -57,6 +57,7 @@ export default {
             this.$store.commit('appendAuction', result)
             this.confirmationMessage = this.title + ' has been added as an auction.'
 
+//clearing the fields
             this.seller = ''
             this.title = ''
             this.description = ''
