@@ -16,8 +16,9 @@ export default {
             
             
             <button>Add auction</button>
-        
+       <p>{{ confirmationMessage }}</p>
         </form>
+
     `,
     data() {
         return {
@@ -28,7 +29,8 @@ export default {
             reservePrice: '',
             startTime: '',
             endTime: '',
-            mainImage: ''
+            mainImage: '',
+            confirmationMessage: ''
         }
     },
     methods: {
@@ -53,6 +55,7 @@ export default {
             })
             result = await result.json()
             this.$store.commit('appendAuction', result)
+            this.confirmationMessage = this.title + ' has been added as an auction.'
 
 //clearing the fields
             this.seller = ''
