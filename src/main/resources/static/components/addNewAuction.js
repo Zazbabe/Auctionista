@@ -1,17 +1,17 @@
 export default {
     template: `
         <form @submit.prevent = "addNewAuction">
-              <input v-model = "title" type = "text"
+              <input required v-model = "title" type = "text"
               placeholder = "Enter title">
-                <input v-model = "description" type = "text-box"
+                <input required v-model = "description" type = "text-box"
                 placeholder = "Enter description">
-                  <input v-model = "reservePrice" type = "text"
+                  <input required v-model = "reservePrice" type = "text"
                   placeholder = "Enter reserve price">
-                    <input v-model = "startTime" type = "text"
-                    placeholder = "Enter start date (yyyy-mm-dd)">
-                      <input v-model = "endTime" type = "text"
-                      placeholder = "Enter end date (yyyy-mm-dd)">
-                        <input v-model = "mainImage" type = "text"
+                    <input required v-model = "startTime" type = "date"
+                    placeholder = "Enter start date">
+                      <input required v-model = "endTime" type = "date"
+                      placeholder = "Enter end date">
+                        <input required v-model = "mainImage" type = "text"
                         placeholder = "Enter img-url">
             
             
@@ -36,7 +36,7 @@ export default {
 
             // LÄGG TILL FÖR KORT LÖSEN MM
             let auction = {
-                seller: this.$store.state.activeUser.id,
+                seller: this.$store.state.user.id,
                 title: this.title,
                 description: this.description,
                 reserve_price: this.reservePrice,
@@ -53,8 +53,8 @@ export default {
             })
             result = await result.json()
             this.$store.commit('appendAuction', result)
-/*
 
+//clearing the fields
             this.seller = ''
             this.title = ''
             this.description = ''
@@ -62,8 +62,7 @@ export default {
             this.startTime = ''
             this.endTime = ''
             this.mainImage = ''
-*/
-        
+
         }
     }
 }

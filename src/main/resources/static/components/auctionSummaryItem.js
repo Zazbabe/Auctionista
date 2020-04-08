@@ -1,17 +1,28 @@
+import addNewBid from './addNewBid.js'
+
 export default {
+    components:{
+        addNewBid
+
+    },
     props: [
         'auction'
     ],
     template: `
+    <div>
         <li
-            @click="showAuctionDetails(auction.id)"
+            @click.self="showAuctionDetails(auction.id)"
             class="auction-card">
-                <div class="auction-card-photo" :style="{'background-image': 'url(' + auction.main_image + ')'}">
+                <div @click.self="showAuctionDetails(auction.id)" class="auction-card-photo" :style="{'background-image': 'url(' + auction.main_image + ')'}">
                 </div>
                     Title: {{ auction.title }} <br>
                     Ending: {{ auction.end_time }} <br>
-                    Seller: {{ auction.sellerUsername }}
+                    Highest bid: {{ auction.highestBid }} <br>
+                    Seller: {{ auction.sellerUsername }} <br/>
+                   
+            <addNewBid :auction="auction" v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
         </li>
+        </div>
     `,
     computed: {
         auctions() {

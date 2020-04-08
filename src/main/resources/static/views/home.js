@@ -16,8 +16,17 @@ export default {
 
         let auctions = await fetch('/rest/auctions')
         auctions = await auctions.json()
-        console.log(auctions)
-  
+        // let bids = await fetch('/rest/current_bid')
+        // bids = await bids.json()
+        // bids.forEach(bid => {
+        //     const auction = auctions.find(auction => auction.id === bid.auction_id)
+        //     if(auction) {
+        //         auction.highest_bid = bid.max_bid
+        //     }
+        // })
+        // //console.log(bids)
+        // //console.log(auctions)
+
         this.$store.commit('setAuctions', auctions)
       }
 }
