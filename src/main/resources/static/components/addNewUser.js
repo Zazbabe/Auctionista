@@ -1,6 +1,6 @@
 export default {
     template: `
-        <form @submit.prevent = "registerNewUser">
+        <form @submit.prevent = "registerNewUser" class = "registerform">
             <input v-model = "userName" type = "text"
             placeholder = "Enter username">
               <input v-model = "password" type = "password"
