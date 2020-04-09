@@ -50,7 +50,11 @@ export default {
                 end_time: this.endTime,
                 main_image: this.mainImage
             }
-            if(Date.parse(this.startTime && this.endTime) > Date.now ()){
+            let nowDate = new Date()
+            nowDate.setHours(0, 0, 0, 0)
+            let startDate = new Date(this.startTime)
+            let endDate = new Date(this.endTime)
+        if(nowDate <= startDate && startDate < endDate){
             let result = await fetch('/rest/auctions', {
                 method: 'POST',
                 headers: {
@@ -60,25 +64,28 @@ export default {
             })
             result = await result.json()
             this.$store.commit('appendAuction', result)
-            this.valid = ''
             this.confirmationMessage = this.title + ' has been added as an auction.'
+            this.valid = ""
+              //clearing the fields
+        this.seller = ''
+        this.title = ''
+        this.description = ''
+        this.reservePrice = ''
+        this.startTime = ''
+        this.endTime = ''
+        this.mainImage = ''
 
-            //clearing the fields
-            this.seller = ''
-            this.title = ''
-            this.description = ''
-            this.reservePrice = ''
-            this.startTime = ''
-            this.endTime = ''
-            this.mainImage = ''
-        }else if(Date.parse(this.startTime) < Date.now ()) {
-              this.valid = this.startTime + " is an invalid date, try again"
-              this.confirmationMessage = ''
-        }else if(Date.parse(this.endTime) < Date.now ()) {
-                        this.valid = this.endTime + " is an invalid date, try again"
-                        this.confirmationMessage = ''
-                  }
+
+        }else {
+             this.valid = "invalid Date, try again"
+             this.confirmationMessage = ""
 
         }
-        }
+
+       
+
     }
+}
+
+
+}
