@@ -15,7 +15,8 @@ export default {
                         placeholder = "Enter img-url">
             
             
-            <button>Add auction</button>
+            <button>Add auction</button><br>
+            <p>{{valid}}</p>
         
         </form>
     `,
@@ -28,7 +29,8 @@ export default {
             reservePrice: '',
             startTime: '',
             endTime: '',
-            mainImage: ''
+            mainImage: '',
+            valid: ""
         }
     },
     methods: {
@@ -44,6 +46,7 @@ export default {
                 end_time: this.endTime,
                 main_image: this.mainImage
             }
+            if(Date.parse(this.startTime && this.endTime) > Date.now ()){
             let result = await fetch('/rest/auctions', {
                 method: 'POST',
                 headers: {
@@ -53,7 +56,9 @@ export default {
             })
             result = await result.json()
             this.$store.commit('appendAuction', result)
-
+        }else {
+              return this.valid = "invalid Date, try again"
+        }
 //clearing the fields
             this.seller = ''
             this.title = ''
@@ -62,7 +67,6 @@ export default {
             this.startTime = ''
             this.endTime = ''
             this.mainImage = ''
-
+        }
         }
     }
-}
