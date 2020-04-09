@@ -1,6 +1,6 @@
 export default {
     template: `
-        <form @submit.prevent = "addNewAuction">
+        <form @submit.prevent = "addNewAuction" class = "auctionform">
               <input required v-model = "title" type = "text"
               placeholder = "Enter title">
                 <input required v-model = "description" type = "text-box"
