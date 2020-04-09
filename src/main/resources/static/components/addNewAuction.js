@@ -33,7 +33,7 @@ export default {
             startTime: '',
             endTime: '',
             mainImage: '',
-            confirmationMessage: ''
+            confirmationMessage: '',
             mainImage: '',
             valid: ""
         }
