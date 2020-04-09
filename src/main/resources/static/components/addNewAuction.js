@@ -15,10 +15,13 @@ export default {
                         placeholder = "Enter img-url">
             
             
+            <button>Add auction</button>
+       <p>{{ confirmationMessage }}</p>
             <button>Add auction</button><br>
             <p>{{valid}}</p>
         
         </form>
+
     `,
     data() {
         return {
@@ -29,6 +32,8 @@ export default {
             reservePrice: '',
             startTime: '',
             endTime: '',
+            mainImage: '',
+            confirmationMessage: ''
             mainImage: '',
             valid: ""
         }
@@ -56,6 +61,8 @@ export default {
             })
             result = await result.json()
             this.$store.commit('appendAuction', result)
+            this.confirmationMessage = this.title + ' has been added as an auction.'
+
         }else {
               return this.valid = "invalid Date, try again"
         }

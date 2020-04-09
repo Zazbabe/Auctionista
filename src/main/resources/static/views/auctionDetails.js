@@ -21,16 +21,13 @@ export default {
         <router-link v-if="this.$store.state.user == null " to="/register">Click here to create an account or login to bid!</router-link>
         <navbarLoginComponent v-if ="this.$store.state.user == null"/>
         <newBid :auction="auction"
-        v-if="this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
-       
+        v-if= "Date.parse(this.auction.end_time) > Date.now() && this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
+       <p v-else-if= "Date.parse(this.auction.end_time) < Date.now()">***This Product can not accept anymore bids***</p>
         </div>
     </div>
     `,
     data() {
         return {
-
-
-            
             auction: {
                 
                 title: '',
@@ -39,21 +36,14 @@ export default {
                 end_time: '',
                 highestBid: '',
                 description: '',
+          
+
                 
               
             
             }
         }
     },
-
-
-
-
-
-
- 
-
-
 
 
 
@@ -85,6 +75,8 @@ export default {
         //console.log("Removing setInterval...")
         clearInterval(this.fetchInterval)
      }
+
+
 
 
 }
