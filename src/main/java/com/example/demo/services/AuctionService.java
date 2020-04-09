@@ -21,7 +21,7 @@ public class AuctionService {
     BidRepo bidRepo;
 
     public List<Auction> findAllAuctions() {
-        List<Auction> auctions =  (List<Auction>) auctionRepo.findAll();
+        List<Auction> auctions =  (List<Auction>) auctionRepo.findAllByOrderByIdDesc();
 
         for(Auction auction : auctions) {
             auction.setSellerUsername(userRepo.findById(auction.getSeller()).get().getUsername());
