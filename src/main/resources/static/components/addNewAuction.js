@@ -16,8 +16,7 @@ export default {
             
             
             <button>Add auction</button>
-       <p>{{ confirmationMessage }}</p>
-            <button>Add auction</button><br>
+            <p>{{ confirmationMessage }}</p>
             <p>{{valid}}</p>
         
         </form>
@@ -33,7 +32,7 @@ export default {
             startTime: '',
             endTime: '',
             mainImage: '',
-            confirmationMessage: ''
+            confirmationMessage: '',
             mainImage: '',
             valid: ""
         }
@@ -61,12 +60,10 @@ export default {
             })
             result = await result.json()
             this.$store.commit('appendAuction', result)
+            this.valid = ''
             this.confirmationMessage = this.title + ' has been added as an auction.'
 
-        }else {
-              return this.valid = "invalid Date, try again"
-        }
-//clearing the fields
+            //clearing the fields
             this.seller = ''
             this.title = ''
             this.description = ''
@@ -74,6 +71,14 @@ export default {
             this.startTime = ''
             this.endTime = ''
             this.mainImage = ''
+        }else if(Date.parse(this.startTime) < Date.now ()) {
+              this.valid = this.startTime + " is an invalid date, try again"
+              this.confirmationMessage = ''
+        }else if(Date.parse(this.endTime) < Date.now ()) {
+                        this.valid = this.endTime + " is an invalid date, try again"
+                        this.confirmationMessage = ''
+                  }
+
         }
         }
     }
