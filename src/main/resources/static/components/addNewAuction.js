@@ -17,6 +17,9 @@ export default {
             
             <button>Add auction</button>
        <p>{{ confirmationMessage }}</p>
+            <button>Add auction</button><br>
+            <p>{{valid}}</p>
+        
         </form>
 
     `,
@@ -31,6 +34,8 @@ export default {
             endTime: '',
             mainImage: '',
             confirmationMessage: ''
+            mainImage: '',
+            valid: ""
         }
     },
     methods: {
@@ -46,6 +51,7 @@ export default {
                 end_time: this.endTime,
                 main_image: this.mainImage
             }
+            if(Date.parse(this.startTime && this.endTime) > Date.now ()){
             let result = await fetch('/rest/auctions', {
                 method: 'POST',
                 headers: {
@@ -57,6 +63,9 @@ export default {
             this.$store.commit('appendAuction', result)
             this.confirmationMessage = this.title + ' has been added as an auction.'
 
+        }else {
+              return this.valid = "invalid Date, try again"
+        }
 //clearing the fields
             this.seller = ''
             this.title = ''
@@ -65,7 +74,6 @@ export default {
             this.startTime = ''
             this.endTime = ''
             this.mainImage = ''
-
+        }
         }
     }
-}
