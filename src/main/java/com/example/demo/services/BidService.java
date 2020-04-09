@@ -13,6 +13,9 @@ public class BidService {
         @Autowired
         BidRepo bidRepo;
 
+        @Autowired
+        UserService userService;
+
 //        @Autowired
 //    AuctionRepo auctionRepo;
 
@@ -29,6 +32,18 @@ public class BidService {
     }
 
     public Bid addNewBid(Bid bid) {
+        /* Make sure bidder is same as current user, and bid is higher than current highest bid... */
+
+        if(bid.getBidder() != userService.findCurrentUser().getId()) {
+            return null;
+        }
+
+        Optional<Bid> highestBid = findHighestBid(bid.getAuction_id());
+
+        if(highestBid.isPresent() && bid.getBid() <= highestBid.get().getBid()) {
+            return null;
+        }
+
         return bidRepo.save(bid);
     }
 
