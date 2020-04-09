@@ -18,7 +18,8 @@ export default {
     <input type="text" v-model="search" placeholder="Search title.."/>
     </div>
     <ul>
-        <auctionSummaryItem v-for="auction of auctions" :key="auction.id" :auction="auction"/>
+        <auctionSummaryItem v-for="auction of auctions" :key="auction.id" :auction="auction"
+        v-if="Date.parse(auction.start_time) >= Date.now() && Date.now() < Date.parse(auction.end_time)" />
      </ul>
      </div>
     `,
