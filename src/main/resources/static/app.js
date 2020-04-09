@@ -18,15 +18,13 @@ export default {
           <navbarLogoutComponent v-if="isLoggedIn" />
           <navbarLoginComponent  v-else />
         </nav>
-        <div class="top-picture">
-          <div class="top-picture-text">AUCTIONISTA</div>
-        </div>
+        <div class="top-picture"> AUCTIONISTA </div>
   
         <main>
           <router-view />
         </main>
 
-        <footer class="footer"> Made by the dev-team at J.F.A.S.P </footer> 
+        <footer class="footer"> Made by the dev-team at J.F.A.S.P.M </footer>
       </div>
     `,
     async created() {
