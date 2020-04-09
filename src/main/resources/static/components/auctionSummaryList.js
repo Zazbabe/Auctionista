@@ -19,7 +19,7 @@ export default {
     </div>
     <ul>
         <auctionSummaryItem v-for="auction of auctions" :key="auction.id" :auction="auction"
-        v-if="Date.parse(auction.start_time) >= Date.now() && Date.now() < Date.parse(auction.end_time)" />
+        v-if="Date.now() >= Date.parse(auction.start_time) && Date.now() < Date.parse(auction.end_time)" />
      </ul>
      </div>
     `,
