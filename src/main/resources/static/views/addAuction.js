@@ -6,8 +6,8 @@ export default {
         newAuction
     },
     template: `
-        <div>
-            <h2> Add Auction </h2>
+        <div align="center">
+            <h2 class = "register"> Add Auction </h2>
             <newAuction> </newAuction>
         </div>
     `

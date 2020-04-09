@@ -146,3 +146,11 @@ ul {
     width: 230px;
     
 }
+.auctionform {
+    text-align: center;
+    background-color: rgb(245, 244, 244);
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    
+}

@@ -1,6 +1,6 @@
 export default {
     template: `
-        <form @submit.prevent = "addNewAuction">
+        <form @submit.prevent = "addNewAuction" class = "auctionform">
               <input required v-model = "title" type = "text"
               placeholder = "Enter title">
                 <input required v-model = "description" type = "text-box"
@@ -16,8 +16,12 @@ export default {
             
             
             <button>Add auction</button>
+       <p>{{ confirmationMessage }}</p>
+            <button>Add auction</button><br>
+            <p>{{valid}}</p>
         
         </form>
+
     `,
     data() {
         return {
@@ -28,7 +32,10 @@ export default {
             reservePrice: '',
             startTime: '',
             endTime: '',
-            mainImage: ''
+            mainImage: '',
+            confirmationMessage: '',
+            mainImage: '',
+            valid: ""
         }
     },
     methods: {
@@ -44,6 +51,7 @@ export default {
                 end_time: this.endTime,
                 main_image: this.mainImage
             }
+            if(Date.parse(this.startTime && this.endTime) > Date.now ()){
             let result = await fetch('/rest/auctions', {
                 method: 'POST',
                 headers: {
@@ -53,7 +61,11 @@ export default {
             })
             result = await result.json()
             this.$store.commit('appendAuction', result)
+            this.confirmationMessage = this.title + ' has been added as an auction.'
 
+        }else {
+              return this.valid = "invalid Date, try again"
+        }
 //clearing the fields
             this.seller = ''
             this.title = ''
@@ -62,7 +74,6 @@ export default {
             this.startTime = ''
             this.endTime = ''
             this.mainImage = ''
-
+        }
         }
     }
-}
