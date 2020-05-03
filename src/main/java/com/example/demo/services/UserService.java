@@ -26,6 +26,10 @@ public class UserService {
     }
 
     public User registerUser(User user) {
+        //don't create a user that already exists
+        if(userRepo.findByUsername(user.getUsername())!=null){
+            return null;
+        }
         return myUserDetailsService.addUser(user.getUsername(), user.getPassword(), user.getFirst_name(), user.getLast_name(), user.getEmail(), user.getAddress(), user.getPhone());
     }
 
