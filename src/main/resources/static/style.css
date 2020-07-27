@@ -78,12 +78,21 @@ ul {
 }
 
 .auction-main-picture {
+     height: 300px;
+     width: 300px;
+     background-position: center;
+     background-size: cover;
+     margin-right: 20px;
+ }
+
+.auction-second-picture {
     height: 300px;
     width: 300px;
     background-position: center;
     background-size: cover;
     margin-right: 20px;
 }
+
 
 .auction-details {
     display: flex;

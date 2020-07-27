@@ -11,6 +11,8 @@ export default {
     <div class="auction-details">
         <div class="auction-main-picture" :style="{'background-image': 'url(' + auction.main_image + ')'}">
         </div>
+                <div class="auction-second-picture" :style="{'background-image': 'url(' + auction.second_image + ')'}">
+                </div>
         <div>
         <h2>{{auction.title}}</h2>
         <p>Seller: {{auction.sellerUsername}}</p>

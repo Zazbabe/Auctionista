@@ -52,7 +52,7 @@ export default {
                 start_time: this.startTime,
                 end_time: this.endTime,
                 main_image: this.mainImage,
-                secondImage: this.secondImage
+                second_image: this.secondImage
             }
             let nowDate = new Date()
             nowDate.setHours(0, 0, 0, 0)
