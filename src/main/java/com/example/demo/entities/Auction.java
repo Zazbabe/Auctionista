@@ -16,6 +16,7 @@ public class Auction {
     private String start_time;
     private String end_time;
     private String main_image;
+    private String second_image;
 
     @Transient
     private String sellerUsername;
@@ -105,5 +106,13 @@ public class Auction {
 
     public void setSellerUsername(String sellerUsername) {
         this.sellerUsername = sellerUsername;
+    }
+
+    public String getSecond_image() {
+        return second_image;
+    }
+
+    public void setSecond_image(String second_image) {
+        this.second_image = second_image;
     }
 }

@@ -13,6 +13,8 @@ export default {
                       placeholder = "Enter end date">
                         <input required v-model = "mainImage" type = "text"
                         placeholder = "Enter img-url">
+                          <input required v-model = "secondImage" type = "text"
+                          placeholder = "Enter second img-url">
             
             
             <button>Add auction</button>
@@ -32,6 +34,7 @@ export default {
             startTime: '',
             endTime: '',
             mainImage: '',
+            secondImage: '',
             confirmationMessage: '',
             mainImage: '',
             valid: ""
@@ -48,7 +51,8 @@ export default {
                 reserve_price: this.reservePrice,
                 start_time: this.startTime,
                 end_time: this.endTime,
-                main_image: this.mainImage
+                main_image: this.mainImage,
+                secondImage: this.secondImage
             }
             let nowDate = new Date()
             nowDate.setHours(0, 0, 0, 0)
@@ -74,6 +78,7 @@ export default {
         this.startTime = ''
         this.endTime = ''
         this.mainImage = ''
+        this.secondImage = ''
 
 
         }else {
