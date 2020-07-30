@@ -12,12 +12,12 @@ export default {
     },
     template: `
     <div class="auction-details">
-        <div class="auction-main-picture" :style="{'background-image': 'url(' + auction.main_image + ')'}">
-        </div>
+        <!div class="auction-main-picture" :style="{'background-image': 'url(' + auction.main_image + ')'}">
+        <!/div>
 
-        <lightBox :img1="auction.main_image">
+
+        <lightBox :img1="auction.main_image" :img2="auction.second_image">
         </lightBox>
-
 
         
 
@@ -30,6 +30,8 @@ export default {
         <p>End time: {{auction.end_time}}</p>
         <p>Highest bid: {{ auction.highestBid }}</p>
         <p class="a-description">Description: {{auction.description}}</p>
+
+
 
 
 
