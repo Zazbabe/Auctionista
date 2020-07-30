@@ -22,7 +22,7 @@ export default {
         <div @click.self="isDisplayPic(img1)" class="auction-second-picture" :style="{'background-image': 'url(' + img1 + ')'}">
         </div>
 
-        <div class="auction-second-picture" :style="{'background-image': 'url(' + img2 + ')'}">
+        <div div @click.self="isDisplayPic(img2)" class="auction-second-picture" :style="{'background-image': 'url(' + img2 + ')'}">
         </div>
 
         </div>
@@ -39,7 +39,7 @@ export default {
 
     methods: {
         isDisplayPic(img) {
-            this.$router.push('/auctions/' + id)
+            this.displayPic = img
         }
     },
 
