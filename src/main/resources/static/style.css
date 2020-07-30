@@ -86,11 +86,35 @@ ul {
  }
 
 .auction-second-picture {
-    height: 300px;
-    width: 300px;
-    background-position: center;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+    background-color: rgb(245, 244, 244);
+    padding: 7px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+
+    height: 150px;
+    width: 150px;
+    background-position: bottom;
     background-size: cover;
-    margin-right: 20px;
+
+}
+
+.auction-second-picture:hover {
+    border: 1px solid gray;
+}
+
+.auction-picture-list {
+    display: flex;
+    flex-flow: row;
+
 }
 
 
@@ -157,4 +181,14 @@ ul {
     background-position: center;
     width: 150px;
     
+}
+
+.lightbox {
+    background: rgba(0, 0, 0, 0.8);
+}
+.lightbox-image img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(100vh - 90px);
 }

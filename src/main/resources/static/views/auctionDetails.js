@@ -1,18 +1,28 @@
 import newBid from  '../components/addNewBid.js'
 import navbarLoginComponent from '../components/navbarLoginComponent.js'
+import lightBox from '../components/lightBox.js'
 
 
 export default {
     components: {
         newBid,
-        navbarLoginComponent
+        navbarLoginComponent,
+        lightBox,
+
     },
     template: `
     <div class="auction-details">
         <div class="auction-main-picture" :style="{'background-image': 'url(' + auction.main_image + ')'}">
         </div>
-                <div class="auction-second-picture" :style="{'background-image': 'url(' + auction.second_image + ')'}">
-                </div>
+
+        <lightBox :img1="auction.main_image">
+        </lightBox>
+
+
+        
+
+
+
         <div>
         <h2>{{auction.title}}</h2>
         <p>Seller: {{auction.sellerUsername}}</p>
@@ -20,13 +30,24 @@ export default {
         <p>End time: {{auction.end_time}}</p>
         <p>Highest bid: {{ auction.highestBid }}</p>
         <p class="a-description">Description: {{auction.description}}</p>
+
+
+
+        
+        
+
+
+
         <router-link v-if="this.$store.state.user == null " to="/register">Click here to create an account or login to bid!</router-link>
         <navbarLoginComponent v-if ="this.$store.state.user == null"/>
         <newBid :auction="auction"
         v-if= "Date.parse(this.auction.end_time) > Date.now() && this.$store.state.user && this.$store.state.user.id !== auction.seller"/>
        <p v-else-if= "Date.parse(this.auction.end_time) < Date.now()">***This Product can not accept anymore bids***</p>
         </div>
+
+        
     </div>
+
     `,
     data() {
         return {
