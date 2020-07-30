@@ -19,10 +19,10 @@ export default {
         <div class="auction-main-picture" :style="{'background-image': 'url(' + displayPic + ')'}">
         </div>
 
-        <div @click.self="isDisplayPic(img1)" class="auction-second-picture" :style="{'background-image': 'url(' + img1 + ')'}">
+        <div @click.self.prevent="isDisplayPic(img1)" class="auction-second-picture" :style="{'background-image': 'url(' + img1 + ')'}">
         </div>
 
-        <div div @click.self="isDisplayPic(img2)" class="auction-second-picture" :style="{'background-image': 'url(' + img2 + ')'}">
+        <div div @click.self.prevent="isDisplayPic(img2)" class="auction-second-picture" :style="{'background-image': 'url(' + img2 + ')'}">
         </div>
 
         </div>
