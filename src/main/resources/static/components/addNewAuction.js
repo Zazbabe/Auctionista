@@ -12,7 +12,7 @@ export default {
                       <input required v-model = "endTime" type = "date"
                       placeholder = "Enter end date">
                         <input required v-model = "mainImage" type = "text"
-                        placeholder = "Enter img-url">
+                        placeholder = "Enter main img-url">
                           <input required v-model = "secondImage" type = "text"
                           placeholder = "Enter second img-url">
             

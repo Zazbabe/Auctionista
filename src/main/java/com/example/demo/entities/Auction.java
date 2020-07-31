@@ -34,7 +34,7 @@ public class Auction {
     }
 
     public Auction() {
-    }
+    }   
 
     public String getStart_time() {
         return start_time;
